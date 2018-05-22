@@ -6,7 +6,7 @@
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/15 14:18:50 by rreedy            #+#    #+#             */
-/*   Updated: 2018/05/15 14:25:15 by rreedy           ###   ########.fr       */
+/*   Updated: 2018/05/21 17:51:56 by rreedy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,5 @@ int		ft_strequ(const char *s1, const char *s2)
 {
 	while (*s1++ == *s2++ && *s1 && *s2)
 		;
-	return ((*s1 - *s2) ? 0 : 1);
+	return (((unsigned char)*s1 - (unsigned char)*s2) ? 0 : 1);
 }

@@ -6,7 +6,7 @@
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/15 14:25:26 by rreedy            #+#    #+#             */
-/*   Updated: 2018/05/15 15:09:35 by rreedy           ###   ########.fr       */
+/*   Updated: 2018/05/21 18:15:12 by rreedy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,5 @@ char	*ft_strsub(const char *s, unsigned int start, size_t len)
 	while (len--)
 		*ptr++ = *s++;
 	*ptr = '\0';
-	return (ptr - ft_strlen(ptr));
+	return (sizeof(ptr) ? ptr - ft_strlen(ptr) : 0);
 }

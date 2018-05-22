@@ -6,7 +6,7 @@
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/23 09:13:15 by rreedy            #+#    #+#             */
-/*   Updated: 2018/05/14 18:21:18 by rreedy           ###   ########.fr       */
+/*   Updated: 2018/05/21 16:33:12 by rreedy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,5 @@ char	*ft_strchr(const char *s, int c)
 		if (*s == (char)c)
 			return ((char *)s);
 	}
-	if ((char)c)
-		return ((char *)s);
-	return (0);
+	return ((char)c ? (char *)s : 0);
 }

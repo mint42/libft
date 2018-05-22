@@ -6,7 +6,7 @@
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/22 13:34:22 by rreedy            #+#    #+#             */
-/*   Updated: 2018/05/17 16:38:48 by rreedy           ###   ########.fr       */
+/*   Updated: 2018/05/21 16:43:56 by rreedy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	char	*cur;
 
-	cur = dst;
-	cur = cur + ft_strlen(dst);
+	cur = dst + ft_strlen(dst);
 	while (dstsize)
 		*cur++ = *src++;
 	if (dstsize > 0)

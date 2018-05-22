@@ -6,7 +6,7 @@
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/18 15:59:38 by rreedy            #+#    #+#             */
-/*   Updated: 2018/05/14 21:32:15 by rreedy           ###   ########.fr       */
+/*   Updated: 2018/05/21 16:31:31 by rreedy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@ char	*ft_strcat(char *s1, const char *s2)
 {
 	char	*cur;
 
-	cur = s1;
-	cur += ft_strlen(s1);
+	cur = s1 + ft_strlen(s1);
 	while (*s2)
 		*cur++ = *s2++;
 	*cur = '\0';

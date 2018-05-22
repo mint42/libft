@@ -6,7 +6,7 @@
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/15 14:37:50 by rreedy            #+#    #+#             */
-/*   Updated: 2018/05/17 20:49:06 by rreedy           ###   ########.fr       */
+/*   Updated: 2018/05/21 18:16:24 by rreedy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,5 @@ char	*ft_strtrim(const char *s)
 	while (i--)
 		*ptr++ = *s++;
 	*ptr = '\0';
-	return (ptr - ft_strlen(ptr));
+	return (sizeof(ptr) ? ptr - ft_strlen(ptr) : 0);
 }
