@@ -6,10 +6,11 @@
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/14 18:03:28 by rreedy            #+#    #+#             */
-/*   Updated: 2018/05/21 16:33:53 by rreedy           ###   ########.fr       */
+/*   Updated: 2018/05/28 11:22:34 by rreedy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "libft.h"
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
@@ -18,7 +19,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	char	*temp;
 	size_t	i;
 
-	temp = (char *)malloc(sizeof(char *) *len);
+	temp = (char *)malloc(sizeof(char *) * len);
 	cur = (char *)dst;
 	i = len;
 	while (len--)

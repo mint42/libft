@@ -6,10 +6,11 @@
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/18 12:11:50 by rreedy            #+#    #+#             */
-/*   Updated: 2018/05/14 18:14:59 by rreedy           ###   ########.fr       */
+/*   Updated: 2018/05/28 11:21:15 by rreedy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
 #include "libft.h"
 
 void	ft_putstr(const char *str)

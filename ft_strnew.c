@@ -6,10 +6,11 @@
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/17 13:57:05 by rreedy            #+#    #+#             */
-/*   Updated: 2018/05/21 18:15:46 by rreedy           ###   ########.fr       */
+/*   Updated: 2018/05/28 11:15:43 by rreedy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "libft.h"
 
 char	*ft_strnew(size_t size)

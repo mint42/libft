@@ -6,10 +6,11 @@
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/15 14:37:50 by rreedy            #+#    #+#             */
-/*   Updated: 2018/05/21 18:16:24 by rreedy           ###   ########.fr       */
+/*   Updated: 2018/05/28 11:06:53 by rreedy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "libft.h"
 
 char	*ft_strtrim(const char *s)

@@ -6,14 +6,14 @@
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/21 18:17:08 by rreedy            #+#    #+#             */
-/*   Updated: 2018/05/21 18:20:28 by rreedy           ###   ########.fr       */
+/*   Updated: 2018/05/28 09:58:08 by rreedy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_stritter(char *s, void (*f)(char *))
+void	ft_striter(char *s, void (*f)(char *))
 {
 	while (*s++)
-		*s = *(char *)f(s);
+		f(s);
 }
