@@ -6,7 +6,7 @@
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/17 14:16:02 by rreedy            #+#    #+#             */
-/*   Updated: 2018/05/17 19:57:48 by rreedy           ###   ########.fr       */
+/*   Updated: 2018/05/28 15:10:42 by rreedy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,13 @@
 # include <unistd.h>
 # include <string.h>
 # include <stddef.h>
+
+typedef struct	s_list
+{
+	void			*content;
+	size_t			content_size;
+	struct s_list	*next;
+}					t_list;
 
 int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);
@@ -28,12 +35,12 @@ int		ft_isprint(int c);
 int		ft_isspace(int c);
 int		ft_isupper(int c);
 char	*ft_itoa(int n);
-//void	ft_lstadd(t_list **alist, t_list *new);
-//void	ft_lstdel(t_list **alist, void (*del)(void *, size_t));
-//void	ft_lstdelone(t_list **alist, void (*del)(void *, size_t));
-//void	ft_lstiter(t_list *lst, void (*f)(t_list *elem));
-//t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
-//t_list	*ft_lstnew(const void *content, size_t content_size);
+void	ft_lstadd(t_list **alist, t_list *new);
+void	ft_lstdel(t_list **alist, void (*del)(void *, size_t));
+void	ft_lstdelone(t_list **alist, void (*del)(void *, size_t));
+void	ft_lstiter(t_list *lst, void (*f)(t_list *elem));
+t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+t_list	*ft_lstnew(const void *content, size_t content_size);
 void	*ft_memalloc(size_t size);
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);

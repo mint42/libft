@@ -6,7 +6,7 @@
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/21 18:02:35 by rreedy            #+#    #+#             */
-/*   Updated: 2018/05/28 11:16:34 by rreedy           ###   ########.fr       */
+/*   Updated: 2018/05/28 14:47:17 by rreedy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	**ft_strsplit(const char *s, char c)
 	str = (char **)malloc(sizeof(char *) * ft_strlen(s));
 	while (*s && sizeof(str) > 0)
 	{
-		while(*s == c)
+		while (*s == c)
 			s++;
 		if (i)
 			w++;
