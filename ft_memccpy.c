@@ -21,8 +21,7 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	{
 		*cur++ = *(unsigned char *)src++;
 		if ((*cur - 1) == (unsigned char)c)
-			return (cur++);
+			return (cur);
 	}
-	*cur = '\0';
-	return (cur);
+	return (0);
 }

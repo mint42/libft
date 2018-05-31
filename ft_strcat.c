@@ -14,11 +14,5 @@
 
 char	*ft_strcat(char *s1, const char *s2)
 {
-	char	*cur;
-
-	cur = s1 + ft_strlen(s1);
-	while (*s2)
-		*cur++ = *s2++;
-	*cur = '\0';
-	return (s1);
+	return (ft_strncat(s1, s2, ft_strlen(s2)));
 }

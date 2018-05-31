@@ -17,7 +17,7 @@ char	*ft_strncpy(char *dst, const char *src, size_t len)
 	char	*cur;
 
 	cur = dst;
-	while (len-- && *src)
+	while (*src && len--)
 		*cur++ = *src++;
 	if (len)
 		ft_memset(cur, '\0', len);
