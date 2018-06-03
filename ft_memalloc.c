@@ -6,7 +6,7 @@
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/15 14:09:40 by rreedy            #+#    #+#             */
-/*   Updated: 2018/05/28 11:23:37 by rreedy           ###   ########.fr       */
+/*   Updated: 2018/06/01 17:54:40 by rreedy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 void	*ft_memalloc(size_t size)
 {
-	return (ft_memset(malloc(size), 0, size));
+	return (ft_memsec(malloc(size), 0, size));
 }

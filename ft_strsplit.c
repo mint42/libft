@@ -6,32 +6,33 @@
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/21 18:02:35 by rreedy            #+#    #+#             */
-/*   Updated: 2018/05/28 14:47:17 by rreedy           ###   ########.fr       */
+/*   Updated: 2018/06/02 19:20:02 by rreedy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 char	**ft_strsplit(const char *s, char c)
 {
 	char	**str;
-	int		w;
 	int		i;
+	int		wc;
 
-	w = 0;
+	if (!s)
+		return (0);
 	i = 0;
-	str = (char **)malloc(sizeof(char *) * ft_strlen(s));
-	while (*s && sizeof(str) > 0)
+	wc = ft_cw(s, (int)c);
+	str = (char **)ft_memalloc(sizeof(char *) * (wc + 1));
+	while (wc-- && str)
 	{
-		while (*s == c)
+		while (*s && *s == c)
 			s++;
-		if (i)
-			w++;
-		i = 0;
-		while (*s != c && *s)
-			str[w][i++] = *s++;
-		str[w][i] = '\0';
+		str[i] = ft_strsub(s, 0, ft_strlend(s, c));
+		if (!str[i])
+			return (0);
+		s = s + ft_strlend(s, (int)c);
+		i++;
+		str[i] = 0;
 	}
-	return (sizeof(str) ? str : 0);
+	return (str);
 }

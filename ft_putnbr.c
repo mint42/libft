@@ -6,13 +6,25 @@
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/22 10:45:04 by rreedy            #+#    #+#             */
-/*   Updated: 2018/05/14 20:39:26 by rreedy           ###   ########.fr       */
+/*   Updated: 2018/06/02 17:19:55 by rreedy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr(int nbr)
+void	ft_putnbr(int n)
 {
-	ft_putstr(ft_itoa(nbr));
+	if (n == -2147483648)
+	{
+		ft_putstr("-2147483648");
+		return ;
+	}
+	if (n < 0)
+	{
+		ft_putchar('-');
+		n = n * -1;
+	}
+	if (n > 9)
+		ft_putnbr(n / 10);
+	ft_putchar((n % 10) + 48);
 }

@@ -6,15 +6,18 @@
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/18 13:50:58 by rreedy            #+#    #+#             */
-/*   Updated: 2018/05/17 17:27:07 by rreedy           ###   ########.fr       */
+/*   Updated: 2018/05/31 16:32:55 by rreedy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strncmp(const char *s1, const char *s2, size_t n)
+int		ft_strncmp(const char *s1, const char *s2, size_t len)
 {
-	while (n-- && *s1++ == *s2++ && *s1 && *s2)
-		;
+	while (len-- && *s1 == *s2 && *s1 && *s2)
+	{
+		s1++;
+		s2++;
+	}
 	return ((unsigned char)*s1 - (unsigned char)*s2);
 }

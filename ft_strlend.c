@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_strlend.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/18 12:11:50 by rreedy            #+#    #+#             */
-/*   Updated: 2018/06/02 17:44:56 by rreedy           ###   ########.fr       */
+/*   Created: 2018/05/31 16:16:46 by rreedy            #+#    #+#             */
+/*   Updated: 2018/06/01 17:47:23 by rreedy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include "libft.h"
 
-void	ft_putstr(const char *s)
+size_t	ft_strlend(const char *s, int c)
 {
-	if (!s)
-		return ;
-	write(1, s, ft_strlen(s));
+	size_t	i;
+
+	i = 0;
+	while (s[i] && s[i] != (unsigned char)c)
+		i++;
+	return (i);
 }

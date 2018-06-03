@@ -6,7 +6,7 @@
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/22 13:41:36 by rreedy            #+#    #+#             */
-/*   Updated: 2018/05/28 14:32:19 by rreedy           ###   ########.fr       */
+/*   Updated: 2018/05/31 16:57:50 by rreedy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 char	*ft_strstr(const char *s1, const char *s2)
 {
-	return(ft_strnstr(s1, s2, ft_strlen(s1)));
+	return (ft_strnstr(s1, s2, ft_strlen(s1)));
 }

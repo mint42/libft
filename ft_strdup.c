@@ -6,7 +6,7 @@
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/18 13:16:10 by rreedy            #+#    #+#             */
-/*   Updated: 2018/05/28 14:42:30 by rreedy           ###   ########.fr       */
+/*   Updated: 2018/06/02 16:33:58 by rreedy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,6 @@ char	*ft_strdup(const char *s1)
 {
 	char	*cpy;
 
-	cpy = ft_strnew(ft_strlen(s1) + 1);
+	cpy = ft_strnew(ft_strlen(s1));
 	return (cpy ? ft_strcpy(cpy, s1) : 0);
 }
