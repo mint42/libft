@@ -6,7 +6,7 @@
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/17 20:35:28 by rreedy            #+#    #+#             */
-/*   Updated: 2018/06/02 17:38:35 by rreedy           ###   ########.fr       */
+/*   Updated: 2018/06/04 12:23:51 by rreedy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,11 @@ char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 	if (!s || !f)
 		return (0);
 	str = ft_strnew(ft_strlen(s));
-	i = -1;
-	while (str && i++ < ft_strlen(s))
-		str[i] = f(i, *s);
+	i = 0;
+	while (str && s[i])
+	{
+		str[i] = f(i, s[i]);
+		++i;
+	}
 	return (str);
 }

@@ -6,7 +6,7 @@
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/21 18:02:35 by rreedy            #+#    #+#             */
-/*   Updated: 2018/06/02 19:20:02 by rreedy           ###   ########.fr       */
+/*   Updated: 2018/06/04 12:26:00 by rreedy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,12 @@ char	**ft_strsplit(const char *s, char c)
 	while (wc-- && str)
 	{
 		while (*s && *s == c)
-			s++;
+			++s;
 		str[i] = ft_strsub(s, 0, ft_strlend(s, c));
 		if (!str[i])
 			return (0);
 		s = s + ft_strlend(s, (int)c);
-		i++;
+		++i;
 		str[i] = 0;
 	}
 	return (str);

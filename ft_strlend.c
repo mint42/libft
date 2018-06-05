@@ -6,7 +6,7 @@
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/31 16:16:46 by rreedy            #+#    #+#             */
-/*   Updated: 2018/06/01 17:47:23 by rreedy           ###   ########.fr       */
+/*   Updated: 2018/06/04 12:25:18 by rreedy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,6 @@ size_t	ft_strlend(const char *s, int c)
 
 	i = 0;
 	while (s[i] && s[i] != (unsigned char)c)
-		i++;
+		++i;
 	return (i);
 }

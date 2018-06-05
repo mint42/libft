@@ -6,7 +6,7 @@
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/02 17:49:59 by rreedy            #+#    #+#             */
-/*   Updated: 2018/06/02 17:50:05 by rreedy           ###   ########.fr       */
+/*   Updated: 2018/06/04 12:23:45 by rreedy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ int		ft_cw(const char *s, int c)
 	{
 		if (*s != (unsigned char)c)
 		{
-			i++;
+			++i;
 			while (*s && *s != (unsigned char)c)
-				s++;
+				++s;
 		}
 		else
-			s++;
+			++s;
 	}
 	return (i);
 }
