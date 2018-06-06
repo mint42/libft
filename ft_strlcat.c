@@ -6,7 +6,7 @@
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/04 11:35:01 by rreedy            #+#    #+#             */
-/*   Updated: 2018/06/04 19:07:50 by rreedy           ###   ########.fr       */
+/*   Updated: 2018/06/06 14:22:09 by rreedy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,6 @@ size_t		ft_strlcat(char *dst, const char *src, size_t dstsize)
 	len = ft_strlen(dst);
 	if (len >= dstsize)
 		return (dstsize + ft_strlen(src));
-	ft_strncpy (dst + len, src, dstsize - len - 1);
+	ft_strncpy(dst + len, src, dstsize - len - 1);
 	return (len + ft_strlen(src));
 }
