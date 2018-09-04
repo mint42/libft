@@ -6,7 +6,7 @@
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/17 14:16:02 by rreedy            #+#    #+#             */
-/*   Updated: 2018/08/18 11:51:47 by rreedy           ###   ########.fr       */
+/*   Updated: 2018/09/03 20:32:54 by rreedy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include "ft_getline.h"
 
 typedef struct		s_list
 {
@@ -25,6 +26,7 @@ typedef struct		s_list
 
 int					ft_atoi(const char *str);
 void				ft_bzero(void *s, size_t len);
+char				*ft_crop(char **s, int in, size_t size);
 int					ft_cw(const char *s, int c);
 int					ft_isalnum(int c);
 int					ft_isalpha(int c);
@@ -67,7 +69,6 @@ char				*ft_strcpy(char *dst, const char *src);
 void				ft_strdel(char **as);
 char				*ft_strdup(const char *s1);
 int					ft_strequ(const char *s1, const char *s2);
-char				*ft_stresize(char **s, int in, size_t size);
 char				*ft_strinit(int c, size_t size);
 void				ft_striter(char *s, void (*f)(char *));
 void				ft_striteri(char *s, void (*f)(unsigned int, char *));
