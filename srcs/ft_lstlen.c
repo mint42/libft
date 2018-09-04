@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strinit.c                                       :+:      :+:    :+:   */
+/*   ft_lstlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/03 21:40:13 by rreedy            #+#    #+#             */
-/*   Updated: 2018/09/03 21:40:56 by rreedy           ###   ########.fr       */
+/*   Created: 2018/09/03 20:46:11 by rreedy            #+#    #+#             */
+/*   Updated: 2018/09/03 21:32:39 by rreedy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strinit(int c, size_t len)
+size_t	ft_lstlen(t_list *list)
 {
-	char	*s;
+	size_t	i;
 
-	s = (char *)ft_memsec(malloc(len + 1), c, len + 1);
-	s[len] = '\0';
-	return (s);
+	i = 0;
+	while (list && list->content)
+	{
+		++i;
+		list = list->next;
+	}
+	return (i);
 }

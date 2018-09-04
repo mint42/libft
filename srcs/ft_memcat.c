@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stresize.c                                      :+:      :+:    :+:   */
+/*   ft_memcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/18 11:38:53 by rreedy            #+#    #+#             */
-/*   Updated: 2018/08/18 11:45:37 by rreedy           ###   ########.fr       */
+/*   Created: 2018/09/03 21:17:06 by rreedy            #+#    #+#             */
+/*   Updated: 2018/09/03 21:21:36 by rreedy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_stresize(char **s, int in, size_t size)
+void	*ft_memcat(void *dst, const void *src, size_t dstlen, size_t srclen)
 {
-	char	*str;
+	unsigned char	*cur;
+	unsigned char	*cur2;
 
-	str = ft_strnew(size);
-	if (!str)
-		return (0);
-	ft_strncpy(str, *s + in, size);
-	ft_strdel(s);
-	return (str);
+	cur = (unsigned char *)dst + dstlen;
+	cur2 = (unsigned char *)src;
+	while (srclen--)
+		*cur++ = *cur2++;
+	return (dst);
 }

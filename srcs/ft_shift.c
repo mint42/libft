@@ -1,22 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strinit.c                                       :+:      :+:    :+:   */
+/*   ft_shift.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/03 21:40:13 by rreedy            #+#    #+#             */
-/*   Updated: 2018/09/03 21:40:56 by rreedy           ###   ########.fr       */
+/*   Created: 2018/09/03 21:30:02 by rreedy            #+#    #+#             */
+/*   Updated: 2018/09/03 21:39:46 by rreedy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strinit(int c, size_t len)
+char	*ft_shift(char **s, int in, size_t size)
 {
-	char	*s;
+	char	*str;
+	char	*cur;
 
-	s = (char *)ft_memsec(malloc(len + 1), c, len + 1);
-	s[len] = '\0';
-	return (s);
+	str = ft_strinit(' ', size);
+	cur = *s;
+	if (!str)
+		return (0);
+	while (cur && *cur && size)
+	{
+		str[in] = *cur;
+		++cur;
+		++in;
+		--size;
+	}
+	ft_strdel(s);
+	return (str);
 }

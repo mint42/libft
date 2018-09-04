@@ -1,22 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strinit.c                                       :+:      :+:    :+:   */
+/*   ft_crop.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/03 21:40:13 by rreedy            #+#    #+#             */
-/*   Updated: 2018/09/03 21:40:56 by rreedy           ###   ########.fr       */
+/*   Created: 2018/09/03 20:45:09 by rreedy            #+#    #+#             */
+/*   Updated: 2018/09/03 21:14:52 by rreedy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strinit(int c, size_t len)
+char	*ft_crop(char **s, int in, size_t len)
 {
-	char	*s;
+	char	*str;
 
-	s = (char *)ft_memsec(malloc(len + 1), c, len + 1);
-	s[len] = '\0';
-	return (s);
+	str = ft_strnew(len);
+	if (!str)
+		return (0);
+	ft_strncpy(str, *s + in, len);
+	ft_strdel(s);
+	return (str);
 }
