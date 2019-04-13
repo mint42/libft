@@ -1,0 +1,43 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    base_makefile                                      :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: rreedy <marvin@42.fr>                      +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2019/04/11 21:51:03 by rreedy            #+#    #+#              #
+#    Updated: 2019/04/11 22:33:36 by rreedy           ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+CC := gcc
+DIR := ./srcs/$(NAME)
+OBJS := $(patsubst %.c,%.o,$(wildcard $(DIR)/*.c))
+CFLAGS += -Wall -Wextra -Werror $(INCLUDES)
+
+# colors #
+NAME_COLOR := \e[1;33m
+COMPILE_COLOR := \e[1;32m
+DOTS_COLOR := \e[0;36m
+FINISH_COLOR := \e[0;32m
+CLEAR_COLOR := \e[m
+DELETE_COLOR := \e[0;31m
+
+.PHONY: $(NAME) start stop clean
+
+$(NAME): start $(OBJS) stop
+
+
+start:
+	@ printf "$(COMPILE_COLOR)Compiling $(NAME_COLOR)$(NAME) $(DOTS_COLOR)"
+
+%.o: %.c
+	@ $(CC) $(CFLAGS) -c $< -o $@
+	@ printf "."
+	
+stop:
+	@ printf "$(FINISH_COLOR) done$(CLEAR_COLOR)\n"
+
+clean:
+	@ printf "$(DELETE_COLOR)Cleaning $(NAME_COLOR)$(NAME)$(CLEAR_COLOR)\n"
+	@- $(RM) $(OBJS)

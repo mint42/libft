@@ -6,26 +6,60 @@
 #    By: rreedy <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/04/18 14:31:20 by rreedy            #+#    #+#              #
-#    Updated: 2018/09/03 20:38:51 by rreedy           ###   ########.fr        #
+#    Updated: 2019/04/12 16:45:51 by rreedy           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	:= libft.a
-OBJS	:= $(patsubst %.c,%.o,$(wildcard ./srcs/*.c))
-CFLAGS	+= -Wall -Wextra -Werror -I./includes
+NAME := libft.a
+TEST := main
 
-.PHONY: all clean fclean re
+INCLUDES := -I./includes -I./includes/ft_printf
+CFLAGS += -Wall -Wextra -Werror $(INCLUDES)
+LFLAGS += -L./ -lft
+MODS := ft_binarytree\
+		ft_conv\
+		ft_double_array\
+		ft_list\
+		ft_math\
+		ft_mem\
+		ft_printf\
+		ft_put\
+		ft_str\
+		ft_utils\
+		get_next_line
+
+# colors #
+NAME_COLOR := \e[1;33m
+COMPILE_COLOR := \e[1;32m
+DOTS_COLOR := \e[0;36m
+FINISH_COLOR := \e[0;32m
+CLEAR_COLOR := \e[m
+DELETE_COLOR := \e[0;31m
+
+.PHONY: $(MODS) modules all clean fclean re
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	ar rc $(NAME) $(OBJS)
-	ranlib $(NAME)
+$(NAME): modules
+	@ printf "$(COMPILE_COLOR)Creating  $(NAME_COLOR)$(NAME) "
+	@ ar rc $(NAME) $(shell find srcs -name "*.o")
+	@ printf "$(DOTS_COLOR)."
+	@ ranlib $(NAME)
+	@ printf "."
+	@ printf " $(FINISH_COLOR) done$(CLEAR_COLOR)\n"
+
+modules:
+	@ $(foreach MOD, $(MODS), $(MAKE) --no-print-directory -f ./makefiles/$(MOD);)
+
+test: all $(TEST).o
+	$(CC) $(CFLAGS) $(TEST).o $(INCLUDES) $(LFLAGS)
 
 clean:
-	@- $(RM) $(OBJS)
+	@- $(RM) $(TEST).o
+	@ $(foreach MOD, $(MODS), $(MAKE) --no-print-directory -f ./makefiles/$(MOD) clean;)
 
 fclean: clean
-	@- $(RM) $(NAME)
+	@- $(RM) $(NAME) $(TEST).o a.out
+	@- printf "$(DELETE_COLOR)Removing $(NAME_COLOR)$(NAME)\n"
 
 re: fclean all
