@@ -6,13 +6,14 @@
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/01 13:28:09 by rreedy            #+#    #+#             */
-/*   Updated: 2019/04/07 22:58:16 by rreedy           ###   ########.fr       */
+/*   Updated: 2019/04/15 02:21:55 by rreedy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
+#include <stddef.h>
 
-void	ft_lstdel(t_list **list, void (*del)())
+void	ft_lstdel(t_list **list, void (*del)(void *, size_t))
 {
 	if (*list)
 	{

@@ -6,7 +6,7 @@
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/26 12:22:14 by rreedy            #+#    #+#             */
-/*   Updated: 2019/04/07 22:58:17 by rreedy           ###   ########.fr       */
+/*   Updated: 2019/04/15 02:31:11 by rreedy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ static int		get_file(t_list **lst, int fd)
 	while ((*lst)->content && (((t_file *)((*lst)->content))->fide != fd))
 	{
 		if (!(*lst)->next)
-			(*lst)->next = ft_lstnew(0);
+			(*lst)->next = ft_lstnew(0, 0);
 		*lst = (*lst)->next;
 	}
 	if (!((*lst)->content))
@@ -72,7 +72,7 @@ int				get_next_line(const int fd, char **line)
 	if (fd < 0 || !line)
 		return (-1);
 	if (!head)
-		head = ft_lstnew(0);
+		head = ft_lstnew(0, 0);
 	lst = head;
 	if (get_file(&lst, fd) == -1)
 		return (-1);
