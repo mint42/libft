@@ -6,11 +6,11 @@
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/07 23:12:10 by rreedy            #+#    #+#             */
-/*   Updated: 2019/04/07 23:12:13 by rreedy           ###   ########.fr       */
+/*   Updated: 2019/04/17 19:11:23 by rreedy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_cw(const char *s, int c)
+int		ft_word_count(const char *s, int c)
 {
 	int		i;
 
