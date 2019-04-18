@@ -6,14 +6,14 @@
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/07 17:07:10 by rreedy            #+#    #+#             */
-/*   Updated: 2019/04/07 23:05:57 by rreedy           ###   ########.fr       */
+/*   Updated: 2019/04/17 17:45:22 by rreedy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_MEM_H
 # define FT_MEM_H
 
-#include <stddef.h>
+# include <stddef.h>
 
 void		ft_bzero(void *s, size_t len);
 void		*ft_memalloc(size_t size);

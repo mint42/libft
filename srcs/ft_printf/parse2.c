@@ -6,7 +6,7 @@
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/05 20:44:19 by rreedy            #+#    #+#             */
-/*   Updated: 2019/04/07 23:38:35 by rreedy           ###   ########.fr       */
+/*   Updated: 2019/04/17 17:49:37 by rreedy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 #include "crop.h"
 #include "ft_str.h"
 #include "ft_conv.h"
-#include <stdarg.h> 
-#include <stdlib.h> 
+#include <stdarg.h>
+#include <stdlib.h>
 
 char	*parse_unicode(t_sub *sub, va_list ap)
 {

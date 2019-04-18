@@ -6,12 +6,12 @@
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/07 23:06:15 by rreedy            #+#    #+#             */
-/*   Updated: 2019/04/07 23:07:09 by rreedy           ###   ########.fr       */
+/*   Updated: 2019/04/17 17:46:51 by rreedy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONVERT_H
-# define CONVERT_H
+#ifndef FT_CONV_H
+# define FT_CONV_H
 
 # include <stdlib.h>
 

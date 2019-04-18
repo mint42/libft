@@ -6,7 +6,7 @@
 #    By: rreedy <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/11 21:51:03 by rreedy            #+#    #+#              #
-#    Updated: 2019/04/11 22:33:36 by rreedy           ###   ########.fr        #
+#    Updated: 2019/04/17 17:43:05 by rreedy           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,5 +39,7 @@ stop:
 	@ printf "$(FINISH_COLOR) done$(CLEAR_COLOR)\n"
 
 clean:
-	@ printf "$(DELETE_COLOR)Cleaning $(NAME_COLOR)$(NAME)$(CLEAR_COLOR)\n"
+	@ if $(foreach OBJ, $(OBJS),[ -f $(OBJ) ] ||) false; then \
+		printf "$(DELETE_COLOR)Cleaning $(NAME_COLOR)$(NAME)$(CLEAR_COLOR)\n"; \
+	  fi; 
 	@- $(RM) $(OBJS)

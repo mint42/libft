@@ -6,12 +6,12 @@
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/07 22:06:21 by rreedy            #+#    #+#             */
-/*   Updated: 2019/04/07 23:12:33 by rreedy           ###   ########.fr       */
+/*   Updated: 2019/04/17 17:46:19 by rreedy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef UTILS_H
-# define UTILS_H
+#ifndef FT_UTILS_H
+# define FT_UTILS_H
 
 # include <stddef.h>
 

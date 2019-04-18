@@ -6,7 +6,7 @@
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/12 14:27:43 by rreedy            #+#    #+#             */
-/*   Updated: 2019/04/07 23:38:13 by rreedy           ###   ########.fr       */
+/*   Updated: 2019/04/17 17:49:26 by rreedy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,14 @@
 #include "parse.h"
 #include "crop.h"
 #include "ft_conv.h"
-#include <stdarg.h> 
-#include <stddef.h> 
+#include <stdarg.h>
+#include <stddef.h>
 
 char	*parse_efg(t_sub *sub, va_list ap)
 {
-	if (PREC == -1) PREC = 6; if (TYPE & 0x300000)
+	if (PREC == -1)
+		PREC = 6;
+	if (TYPE & 0x300000)
 	{
 		if (!(TYPE & 0xFC000000) || TYPE & 0x80000000)
 			S = ft_ftoa(va_arg(ap, double), PREC);

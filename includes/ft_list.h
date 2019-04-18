@@ -6,14 +6,14 @@
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/07 17:03:55 by rreedy            #+#    #+#             */
-/*   Updated: 2019/04/15 04:06:12 by rreedy           ###   ########.fr       */
+/*   Updated: 2019/04/17 17:47:16 by rreedy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_LIST_H
 # define FT_LIST_H
 
-#include <stddef.h>
+# include <stddef.h>
 
 typedef struct		s_list
 {

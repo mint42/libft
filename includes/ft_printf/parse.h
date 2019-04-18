@@ -6,7 +6,7 @@
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/07 23:31:32 by rreedy            #+#    #+#             */
-/*   Updated: 2019/04/07 23:33:41 by rreedy           ###   ########.fr       */
+/*   Updated: 2019/04/17 17:45:45 by rreedy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,3 @@ char		*parse_unicode(t_sub *sub, va_list ap);
 char		*parse_csp(t_sub *sub, va_list ap);
 
 #endif
-

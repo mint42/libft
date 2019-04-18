@@ -6,7 +6,7 @@
 #    By: rreedy <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/04/18 14:31:20 by rreedy            #+#    #+#              #
-#    Updated: 2019/04/12 16:45:51 by rreedy           ###   ########.fr        #
+#    Updated: 2019/04/17 17:56:37 by rreedy           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,7 @@ FINISH_COLOR := \e[0;32m
 CLEAR_COLOR := \e[m
 DELETE_COLOR := \e[0;31m
 
-.PHONY: $(MODS) modules all clean fclean re
+.PHONY: $(MODS) modules test all clean fclean re
 
 all: $(NAME)
 
@@ -59,7 +59,10 @@ clean:
 	@ $(foreach MOD, $(MODS), $(MAKE) --no-print-directory -f ./makefiles/$(MOD) clean;)
 
 fclean: clean
-	@- $(RM) $(NAME) $(TEST).o a.out
-	@- printf "$(DELETE_COLOR)Removing $(NAME_COLOR)$(NAME)\n"
+	@- $(RM) a.out
+	@- if [ -f $(NAME) ]; then \
+			$(RM) $(NAME); \
+			printf "$(DELETE_COLOR)Removing $(NAME_COLOR)$(NAME)\n"; \
+	   fi;
 
 re: fclean all

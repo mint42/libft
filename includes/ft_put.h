@@ -6,7 +6,7 @@
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/07 17:06:01 by rreedy            #+#    #+#             */
-/*   Updated: 2019/04/07 17:10:59 by rreedy           ###   ########.fr       */
+/*   Updated: 2019/04/17 17:44:56 by rreedy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,3 @@ void		ft_putstr(const char *s);
 void		ft_putstr_fd(const char *s, int fd);
 
 #endif
-
