@@ -6,14 +6,14 @@
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/01 16:45:52 by rreedy            #+#    #+#             */
-/*   Updated: 2019/04/15 04:16:07 by rreedy           ###   ########.fr       */
+/*   Updated: 2019/04/17 21:41:00 by rreedy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
 #include "ft_mem.h"
 
-t_list	*ft_lstmap(t_list *list, t_list *(*f)(t_list *link))
+t_list	*ft_lstmap(t_list *list, t_list *(*f)(t_list *))
 {
 	t_list	*newlist;
 	t_list	*cur;

@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstinit.c                                       :+:      :+:    :+:   */
+/*   ft_queue_del.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/29 19:10:41 by rreedy            #+#    #+#             */
-/*   Updated: 2019/04/17 21:41:00 by rreedy           ###   ########.fr       */
+/*   Created: 2019/04/20 12:39:17 by rreedy            #+#    #+#             */
+/*   Updated: 2019/04/20 12:53:21 by rreedy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_list.h"
+#include "ft_queue.h"
 #include "ft_mem.h"
-#include <stddef.h>
 
-t_list	*ft_lstinit(void *content, size_t content_size)
+void	ft_queue_del(t_queue **queue, void (*del)(void *))
 {
-	t_list *node;
+	void	*content;
 
-	node = (t_list *)ft_memalloc(sizeof(t_list));
-	if (!node)
-		return (0);
-	node->next = 0;
-	if (!content)
+	content = 0;
+	if (*queue)
 	{
-		node->content = 0;
-		node->content_size = 0;
-		return (node);
+		while (!ft_queue_is_empty(*queue))
+		{
+			content = ft_dequeue(*queue);
+			del(content);
+		}
+		ft_memdel((void **)queue);
 	}
-	node->content = content;
-	node->content_size = content_size;
-	return (node);
 }

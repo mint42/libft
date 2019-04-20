@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstinit.c                                       :+:      :+:    :+:   */
+/*   ft_stack_pop.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/29 19:10:41 by rreedy            #+#    #+#             */
-/*   Updated: 2019/04/17 21:41:00 by rreedy           ###   ########.fr       */
+/*   Created: 2019/04/17 22:16:30 by rreedy            #+#    #+#             */
+/*   Updated: 2019/04/20 12:42:42 by rreedy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_list.h"
+#include "ft_stack.h"
 #include "ft_mem.h"
-#include <stddef.h>
 
-t_list	*ft_lstinit(void *content, size_t content_size)
+void		*ft_stack_pop(t_stack *stack)
 {
-	t_list *node;
+	t_snode		*temp;
+	void		*content;
 
-	node = (t_list *)ft_memalloc(sizeof(t_list));
-	if (!node)
+	if (!stack || !(stack->top))
 		return (0);
-	node->next = 0;
-	if (!content)
-	{
-		node->content = 0;
-		node->content_size = 0;
-		return (node);
-	}
-	node->content = content;
-	node->content_size = content_size;
-	return (node);
+	temp = stack->top;
+	content = stack->top->content;
+	stack->top = stack->top->next;
+	ft_memdel((void **)&temp);
+	return (content);
 }
