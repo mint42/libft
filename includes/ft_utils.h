@@ -6,7 +6,7 @@
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/07 22:06:21 by rreedy            #+#    #+#             */
-/*   Updated: 2019/04/17 17:46:19 by rreedy           ###   ########.fr       */
+/*   Updated: 2019/04/20 13:42:00 by rreedy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,7 @@ int					ft_isupper(int c);
 size_t				ft_numlen(long long int n);
 size_t				ft_numlen_sign(long long int n);
 size_t				ft_unumlen(unsigned long long int n);
+
+void				ft_swap(int *a, int *b);
 
 #endif
