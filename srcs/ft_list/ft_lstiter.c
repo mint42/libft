@@ -6,7 +6,7 @@
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/01 16:00:35 by rreedy            #+#    #+#             */
-/*   Updated: 2019/04/16 01:41:49 by rreedy           ###   ########.fr       */
+/*   Updated: 2019/04/20 19:03:56 by rreedy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_lstiter(t_list *list, void (*f)(t_list *))
 {
+	if (!list || !f)
+		return ;
 	while (list)
 	{
 		f(list);
