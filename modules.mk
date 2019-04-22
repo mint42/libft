@@ -1,27 +1,19 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    base_makefile                                      :+:      :+:    :+:    #
+#    modules.mk                                         :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: rreedy <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2019/04/11 21:51:03 by rreedy            #+#    #+#              #
-#    Updated: 2019/04/17 17:43:05 by rreedy           ###   ########.fr        #
+#    Created: 2019/04/22 00:24:06 by rreedy            #+#    #+#              #
+#    Updated: 2019/04/22 00:24:11 by rreedy           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC := gcc
+include config.mk
+
 DIR := ./srcs/$(NAME)
 OBJS := $(patsubst %.c,%.o,$(wildcard $(DIR)/*.c))
-CFLAGS += -Wall -Wextra -Werror $(INCLUDES)
-
-# colors #
-NAME_COLOR := \e[1;33m
-COMPILE_COLOR := \e[1;32m
-DOTS_COLOR := \e[0;36m
-FINISH_COLOR := \e[0;32m
-CLEAR_COLOR := \e[m
-DELETE_COLOR := \e[0;31m
 
 .PHONY: $(NAME) start stop clean
 

@@ -1,16 +1,16 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    Makefile_str                                       :+:      :+:    :+:    #
+#    ft_stack                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: rreedy <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2019/04/08 00:37:09 by rreedy            #+#    #+#              #
-#    Updated: 2019/04/11 22:34:18 by rreedy           ###   ########.fr        #
+#    Created: 2019/04/20 12:26:42 by rreedy            #+#    #+#              #
+#    Updated: 2019/04/22 00:23:47 by rreedy           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME := ft_str
-INCLUDES := -I./includes
+NAME := ft_stack
 
-include makefiles/base_makefile
+include config.mk
+include modules.mk

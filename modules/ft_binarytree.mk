@@ -1,16 +1,16 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    Makefile_mem                                       :+:      :+:    :+:    #
+#    Makefile_binarytree                                :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: rreedy <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2019/04/08 01:44:02 by rreedy            #+#    #+#              #
-#    Updated: 2019/04/11 22:32:50 by rreedy           ###   ########.fr        #
+#    Created: 2019/04/08 01:40:52 by rreedy            #+#    #+#              #
+#    Updated: 2019/04/22 00:21:43 by rreedy           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME := ft_mem
-INCLUDES := -I./includes
+NAME := ft_binarytree
 
-include makefiles/base_makefile
+include config.mk
+include modules.mk

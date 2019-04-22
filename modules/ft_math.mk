@@ -1,16 +1,16 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    Makefile_conv                                      :+:      :+:    :+:    #
+#    Makefile_math                                      :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: rreedy <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2019/04/08 01:41:15 by rreedy            #+#    #+#              #
-#    Updated: 2019/04/11 22:32:50 by rreedy           ###   ########.fr        #
+#    Created: 2019/04/08 01:43:50 by rreedy            #+#    #+#              #
+#    Updated: 2019/04/22 00:23:47 by rreedy           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME := ft_conv
-INCLUDES := -I./includes
+NAME := ft_math
 
-include makefiles/base_makefile
+include config.mk
+include modules.mk

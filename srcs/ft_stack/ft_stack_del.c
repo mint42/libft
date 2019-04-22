@@ -6,7 +6,7 @@
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/20 12:13:55 by rreedy            #+#    #+#             */
-/*   Updated: 2019/04/20 18:59:12 by rreedy           ###   ########.fr       */
+/*   Updated: 2019/04/22 00:26:03 by rreedy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_stack_del(t_stack **stack, void (*del)(void *))
 {
 	void	*content;
 
-	if (!(*stack))
+	if (!*stack || !del)
 		return ;
 	content = 0;
 	while (!ft_stack_is_empty(*stack))

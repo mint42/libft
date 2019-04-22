@@ -6,11 +6,11 @@
 #    By: rreedy <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/08 01:42:08 by rreedy            #+#    #+#              #
-#    Updated: 2019/04/11 22:32:50 by rreedy           ###   ########.fr        #
+#    Updated: 2019/04/22 00:23:47 by rreedy           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME := get_next_line
-INCLUDES := -I./includes
 
-include makefiles/base_makefile
+include config.mk
+include modules.mk
