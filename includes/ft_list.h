@@ -6,7 +6,7 @@
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/07 17:03:55 by rreedy            #+#    #+#             */
-/*   Updated: 2019/04/17 21:38:28 by rreedy           ###   ########.fr       */
+/*   Updated: 2019/05/03 23:13:36 by rreedy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,7 @@ void				ft_lstdelcontent(void *content, size_t content_size);
 
 void				ft_lstiter(t_list *list, void (*f)(t_list *));
 t_list				*ft_lstmap(t_list *list, t_list *(*f)(t_list *));
+
+int					ft_lstlen(t_list *list);
 
 #endif

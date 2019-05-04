@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stack_is_empty.c                                :+:      :+:    :+:   */
+/*   ft_stack_swap.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/17 22:18:04 by rreedy            #+#    #+#             */
-/*   Updated: 2019/05/03 23:05:49 by rreedy           ###   ########.fr       */
+/*   Created: 2019/05/03 22:58:39 by rreedy            #+#    #+#             */
+/*   Updated: 2019/05/03 23:00:35 by rreedy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_stack.h"
 
-int			ft_stack_is_empty(t_stack *stack)
+void	ft_stack_swap(t_stack *stack)
 {
-	if (!stack || !(stack->top))
-		return (1);
-	return (0);
+	void	*content;
+	if (!stack || !(stack->top) || !(stack->top->next) || !(stack->bottom))
+		return ;
+	content = stack->top->content;
+	stack->top->content = stack->top->next->content;
+	stack->top->next->content = content;
 }

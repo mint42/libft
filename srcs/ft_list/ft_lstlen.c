@@ -1,20 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stack_is_empty.c                                :+:      :+:    :+:   */
+/*   ft_lstlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/17 22:18:04 by rreedy            #+#    #+#             */
-/*   Updated: 2019/05/03 23:05:49 by rreedy           ###   ########.fr       */
+/*   Created: 2019/05/03 23:10:54 by rreedy            #+#    #+#             */
+/*   Updated: 2019/05/03 23:16:21 by rreedy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_stack.h"
+#include "ft_list.h"
 
-int			ft_stack_is_empty(t_stack *stack)
+int		ft_lstlen(t_list *list)
 {
-	if (!stack || !(stack->top))
-		return (1);
-	return (0);
+	int		len;
+
+	len = 0;
+	while (list)
+	{
+		list = list->next;
+		++len;
+	}
+	return (len);
 }

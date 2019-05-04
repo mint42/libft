@@ -6,7 +6,7 @@
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/17 22:16:57 by rreedy            #+#    #+#             */
-/*   Updated: 2019/04/22 02:04:18 by rreedy           ###   ########.fr       */
+/*   Updated: 2019/05/03 23:05:54 by rreedy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void		ft_stack_push(t_stack *stack, void *content)
 	{
 		node->content = content;
 		stack->top = node;
+		stack->bottom = node;
 	}
 	else
 	{

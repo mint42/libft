@@ -6,7 +6,7 @@
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/17 22:15:56 by rreedy            #+#    #+#             */
-/*   Updated: 2019/04/20 12:31:07 by rreedy           ###   ########.fr       */
+/*   Updated: 2019/05/03 23:05:54 by rreedy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,6 @@ t_stack		*ft_stack_init(void)
 	if (!stack)
 		return (0);
 	stack->top = 0;
+	stack->bottom = 0;
 	return (stack);
 }

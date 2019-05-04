@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stack_is_empty.c                                :+:      :+:    :+:   */
+/*   ft_stack_peek_bottom.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/17 22:18:04 by rreedy            #+#    #+#             */
-/*   Updated: 2019/05/03 23:05:49 by rreedy           ###   ########.fr       */
+/*   Created: 2019/05/03 23:01:27 by rreedy            #+#    #+#             */
+/*   Updated: 2019/05/03 23:07:41 by rreedy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_stack.h"
 
-int			ft_stack_is_empty(t_stack *stack)
+void	*ft_stack_peek_bottom(t_stack *stack)
 {
-	if (!stack || !(stack->top))
-		return (1);
-	return (0);
+	if (!stack || !(stack->bottom))
+		return (0);
+	return (stack->bottom->content);
 }
