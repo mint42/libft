@@ -6,7 +6,7 @@
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/20 12:45:21 by rreedy            #+#    #+#             */
-/*   Updated: 2019/04/20 12:54:49 by rreedy           ###   ########.fr       */
+/*   Updated: 2019/05/07 04:15:46 by rreedy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,12 @@ typedef struct		s_queue
 }					t_queue;
 
 t_queue				*ft_queue_init(void);
+
 void				ft_queue_del(t_queue **queue, void (*del)(void *));
+void				ft_queue_del_content(void *content);
+
 void				ft_enqueue(t_queue *queue, void *content);
+
 void				*ft_dequeue(t_queue *queue);
 void				*ft_queue_peek(t_queue *queue);
 int					ft_queue_is_empty(t_queue *queue);
