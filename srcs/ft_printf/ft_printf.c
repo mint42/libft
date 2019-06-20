@@ -6,18 +6,19 @@
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/12 14:30:34 by rreedy            #+#    #+#             */
-/*   Updated: 2019/04/07 23:19:21 by rreedy           ###   ########.fr       */
+/*   Updated: 2019/06/19 22:42:09 by rreedy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include "ft_fd.h"
 #include "ft_mem.h"
 #include "ft_str.h"
 #include <stddef.h>
 #include <stdarg.h>
 #include <unistd.h>
 
-char	*clean(char *s, t_sub sub, char **fmt, size_t *slen)
+static char		*clean(char *s, t_sub sub, char **fmt, size_t *slen)
 {
 	size_t	d;
 
@@ -37,7 +38,7 @@ char	*clean(char *s, t_sub sub, char **fmt, size_t *slen)
 	return (s);
 }
 
-int		ft_printf(const char *fmt, ...)
+int				ft_printf(const char *fmt, ...)
 {
 	va_list		ap;
 	char		*s;
@@ -55,12 +56,12 @@ int		ft_printf(const char *fmt, ...)
 		s = clean(s, sub, (char **)&fmt, &slen);
 	}
 	va_end(ap);
-	write(1, s, slen);
+	write(STDOUT_FD, s, slen);
 	ft_strdel(&s);
 	return (slen);
 }
 
-int		ft_sprintf(char **s, const char *fmt, ...)
+int				ft_sprintf(char **s, const char *fmt, ...)
 {
 	va_list		ap;
 	t_sub		sub;
@@ -80,7 +81,7 @@ int		ft_sprintf(char **s, const char *fmt, ...)
 	return (slen);
 }
 
-int		ft_printfd(int fd, const char *fmt, ...)
+int				ft_printfd(int fd, const char *fmt, ...)
 {
 	va_list		ap;
 	char		*s;
