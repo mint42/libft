@@ -6,17 +6,18 @@
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/01 16:45:52 by rreedy            #+#    #+#             */
-/*   Updated: 2019/04/17 21:41:00 by rreedy           ###   ########.fr       */
+/*   Updated: 2019/10/03 23:49:09 by rreedy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
 #include "ft_mem.h"
 
-t_list	*ft_lstmap(t_list *list, t_list *(*f)(t_list *))
+struct s_list	*ft_lstmap(struct s_list *list,
+					struct s_list *(*f)(struct s_list *))
 {
-	t_list	*newlist;
-	t_list	*cur;
+	struct s_list	*newlist;
+	struct s_list	*cur;
 
 	if (!list || !f)
 		return (0);

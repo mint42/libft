@@ -6,13 +6,13 @@
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/03 23:10:54 by rreedy            #+#    #+#             */
-/*   Updated: 2019/05/03 23:16:21 by rreedy           ###   ########.fr       */
+/*   Updated: 2019/10/03 23:16:03 by rreedy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
 
-int		ft_lstlen(t_list *list)
+int		ft_lstlen(struct s_list *list)
 {
 	int		len;
 

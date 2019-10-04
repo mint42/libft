@@ -6,13 +6,14 @@
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/29 12:52:16 by rreedy            #+#    #+#             */
-/*   Updated: 2019/04/20 19:05:21 by rreedy           ###   ########.fr       */
+/*   Updated: 2019/10/03 23:48:17 by rreedy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_binarytree.h"
 
-void	ft_treeiter(t_binarytree *binarytree, void (*f)(t_binarytree *))
+void	ft_treeiter(struct s_binarytree *binarytree,
+			void (*f)(struct s_binarytree *))
 {
 	if (!binarytree || !f)
 		return ;

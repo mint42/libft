@@ -6,7 +6,7 @@
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/26 12:22:14 by rreedy            #+#    #+#             */
-/*   Updated: 2019/04/15 02:31:11 by rreedy           ###   ########.fr       */
+/*   Updated: 2019/10/03 23:44:40 by rreedy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,13 @@ static int		fill_line(char **line, char **s, int red)
 	return (*s ? 1 : -1);
 }
 
-static int		get_file(t_list **lst, int fd)
+static int		get_file(struct s_list **lst, int fd)
 {
-	t_file	*newf;
+	struct s_file	*newf;
 
 	if (!(*lst))
 		return (-1);
-	while ((*lst)->content && (((t_file *)((*lst)->content))->fide != fd))
+	while ((*lst)->content && FD(*lst) != fd)
 	{
 		if (!(*lst)->next)
 			(*lst)->next = ft_lstnew(0, 0);
@@ -52,11 +52,11 @@ static int		get_file(t_list **lst, int fd)
 	}
 	if (!((*lst)->content))
 	{
-		if (!(newf = (t_file *)ft_memalloc(sizeof(t_file))))
+		if (!(newf = (struct s_file *)ft_memalloc(sizeof(struct s_file))))
 			return (-1);
 		if (!(newf->buf = ft_strnew(BUFF_SIZE)))
 			return (-1);
-		newf->fide = fd;
+		newf->fd = fd;
 		(*lst)->content = newf;
 	}
 	return (1);
@@ -64,9 +64,9 @@ static int		get_file(t_list **lst, int fd)
 
 int				get_next_line(const int fd, char **line)
 {
-	static t_list	*head;
-	t_list			*lst;
-	int				red;
+	static struct s_list	*head;
+	struct s_list			*lst;
+	int						red;
 
 	red = BUFF_SIZE + 1;
 	if (fd < 0 || !line)

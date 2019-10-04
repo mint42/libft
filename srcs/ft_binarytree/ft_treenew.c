@@ -6,7 +6,7 @@
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/29 12:51:42 by rreedy            #+#    #+#             */
-/*   Updated: 2019/04/16 01:49:12 by rreedy           ###   ########.fr       */
+/*   Updated: 2019/10/03 23:28:37 by rreedy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 #include "ft_mem.h"
 #include <stddef.h>
 
-t_binarytree	*ft_treenew(void *content, size_t content_size)
+struct s_binarytree		*ft_treenew(void *content, size_t content_size)
 {
-	t_binarytree	*node;
+	struct s_binarytree		*node;
 
-	node = (t_binarytree *)ft_memalloc(sizeof(t_binarytree));
+	node = (struct s_binarytree *)ft_memalloc(sizeof(struct s_binarytree));
 	if (!node)
 		return (0);
 	if (!content)

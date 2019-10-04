@@ -6,13 +6,14 @@
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/29 12:53:35 by rreedy            #+#    #+#             */
-/*   Updated: 2019/04/16 01:47:21 by rreedy           ###   ########.fr       */
+/*   Updated: 2019/10/03 23:48:17 by rreedy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_binarytree.h"
 
-void	ft_treedel(t_binarytree **binarytree, void (*del)(void *, size_t))
+void	ft_treedel(struct s_binarytree **binarytree,
+			void (*del)(void *, size_t))
 {
 	if (*binarytree)
 	{
