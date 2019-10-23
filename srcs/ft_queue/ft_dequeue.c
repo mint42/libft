@@ -6,7 +6,7 @@
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/20 12:35:42 by rreedy            #+#    #+#             */
-/*   Updated: 2019/04/20 12:45:08 by rreedy           ###   ########.fr       */
+/*   Updated: 2019/10/22 19:31:05 by rreedy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,6 @@ void	*ft_dequeue(t_queue *queue)
 	temp = queue->first;
 	content = queue->first->content;
 	queue->first = queue->first->next;
-	ft_memdel((void **)temp);
+	ft_memdel((void **)&temp);
 	return (content);
 }
