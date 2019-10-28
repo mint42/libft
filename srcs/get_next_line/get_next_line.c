@@ -25,7 +25,7 @@ static int		fill_line(char **line, char **s, int red)
 		return (-1);
 	if (!red && !ft_strlen(*s))
 		return (0);
-	len = ft_strchr(*s, '\n') ? ft_strchr(*s, '\n') - *s : ft_strlen(*s);
+	len = ft_strchr(*s, '\n') ? ft_strchr(*s, '\n') - *s : (int)ft_strlen(*s);
 	*line = ft_strnew(len);
 	if (!*line || red == -1)
 	{

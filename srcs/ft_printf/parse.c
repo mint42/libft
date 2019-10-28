@@ -16,6 +16,7 @@
 #include "ft_conv.h"
 #include <stdarg.h>
 #include <stddef.h>
+#include <stdint.h>
 
 char	*parse_efg(t_sub *sub, va_list ap)
 {
