@@ -6,12 +6,11 @@
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/12 14:30:34 by rreedy            #+#    #+#             */
-/*   Updated: 2019/06/19 22:42:09 by rreedy           ###   ########.fr       */
+/*   Updated: 2019/10/31 23:53:10 by rreedy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include "ft_fd.h"
 #include "ft_mem.h"
 #include "ft_str.h"
 #include <stddef.h>
@@ -56,7 +55,7 @@ int				ft_printf(const char *fmt, ...)
 		s = clean(s, sub, (char **)&fmt, &slen);
 	}
 	va_end(ap);
-	write(STDOUT_FD, s, slen);
+	write(STDOUT_FILENO, s, slen);
 	ft_strdel(&s);
 	return (slen);
 }
