@@ -6,7 +6,7 @@
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/07 17:07:10 by rreedy            #+#    #+#             */
-/*   Updated: 2019/04/17 17:45:22 by rreedy           ###   ########.fr       */
+/*   Updated: 2019/11/27 11:33:28 by rreedy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,6 @@ void		ft_memdel(void **ap);
 void		*ft_memmove(void *dst, const void *src, size_t len);
 void		*ft_memset(void *ptr, int c, size_t len);
 void		*ft_memsec(void *ptr, int c, size_t len);
+int			ft_realloc(void **mem, size_t old_size, size_t new_size);
 
 #endif
