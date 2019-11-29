@@ -1,20 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_skipspace.c                                     :+:      :+:    :+:   */
+/*   ft_parse_skip_to_next_word.c                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/15 20:07:41 by rreedy            #+#    #+#             */
-/*   Updated: 2019/04/07 22:58:16 by rreedy           ###   ########.fr       */
+/*   Created: 2019/11/29 13:05:27 by rreedy            #+#    #+#             */
+/*   Updated: 2019/11/29 13:14:11 by rreedy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_utils.h"
+#include "ft_parse.h"
 
-char	*ft_skipspace(char *s)
+void	ft_skip_to_next_word(char **s)
 {
-	while (s && *s && ft_isspace(*s))
-		++s;
-	return (s);
+	ft_parse_skip_word(s);
+	ft_parse_skip_space(s);
 }

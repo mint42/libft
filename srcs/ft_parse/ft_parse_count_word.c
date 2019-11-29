@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_word_count.c                                    :+:      :+:    :+:   */
+/*   ft_parse_count_word.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/07 23:12:10 by rreedy            #+#    #+#             */
-/*   Updated: 2019/04/17 19:11:23 by rreedy           ###   ########.fr       */
+/*   Created: 2019/11/29 10:52:08 by rreedy            #+#    #+#             */
+/*   Updated: 2019/11/29 11:08:30 by rreedy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_word_count(const char *s, int c)
-{
-	int		i;
+#include "ft_utils.h"
+#include <stddef.h>
 
-	i = 0;
+size_t		ft_parse_count_word(const char *s)
+{
+	size_t		count;
+
+	if (!s)
+		return (0);
+	count = 0;
 	while (*s)
 	{
-		if (*s != (unsigned char)c)
-		{
-			++i;
-			while (*s && *s != (unsigned char)c)
-				++s;
-		}
-		else
+		while (ft_isspace(*s))
+			++s;
+		if (*s)
+			++count;
+		while (!ft_isspace(*s))
 			++s;
 	}
-	return (i);
+	return (count);
 }

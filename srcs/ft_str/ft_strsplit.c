@@ -6,7 +6,7 @@
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/21 18:02:35 by rreedy            #+#    #+#             */
-/*   Updated: 2019/04/07 23:12:49 by rreedy           ###   ########.fr       */
+/*   Updated: 2019/11/29 13:10:39 by rreedy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,26 @@
 #include "ft_str.h"
 #include "ft_utils.h"
 
-char	**ft_strsplit(const char *s, char c)
+static int	count_words(const char *s, int c)
+{
+	int		i;
+
+	i = 0;
+	while (*s)
+	{
+		if (*s != (unsigned char)c)
+		{
+			++i;
+			while (*s && *s != (unsigned char)c)
+				++s;
+		}
+		else
+			++s;
+	}
+	return (i);
+}
+
+char		**ft_strsplit(const char *s, char c)
 {
 	char	**str;
 	int		i;
@@ -23,7 +42,7 @@ char	**ft_strsplit(const char *s, char c)
 	if (!s)
 		return (0);
 	i = 0;
-	wc = ft_word_count(s, (int)c);
+	wc = count_words(s, (int)c);
 	str = (char **)ft_memalloc(sizeof(char *) * (wc + 1));
 	while (wc-- && str)
 	{

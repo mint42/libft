@@ -6,7 +6,7 @@
 #    By: rreedy <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/22 00:16:25 by rreedy            #+#    #+#              #
-#    Updated: 2019/04/22 00:19:50 by rreedy           ###   ########.fr        #
+#    Updated: 2019/11/29 10:22:59 by rreedy           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ MODS := ft_binarytree\
 		ft_list\
 		ft_math\
 		ft_mem\
+		ft_parse\
 		ft_printf\
 		ft_put\
 		ft_queue\
