@@ -1,16 +1,16 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    ft_queue                                           :+:      :+:    :+:    #
+#    Makefile_binarytree                                :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: rreedy <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2019/04/20 12:49:13 by rreedy            #+#    #+#              #
-#    Updated: 2020/02/06 18:38:29 by rreedy           ###   ########.fr        #
+#    Created: 2019/04/08 01:40:52 by rreedy            #+#    #+#              #
+#    Updated: 2020/02/07 00:29:49 by rreedy           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-MOD_NAME := ft_queue
+MOD_NAME := ft_binarytree
+MOD_SRCS := $(wildcard modules/$(MOD_NAME)/srcs/*.c)
 
-include config.mk
 include modules.mk

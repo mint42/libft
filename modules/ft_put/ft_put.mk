@@ -1,16 +1,16 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    Makefile_utils                                     :+:      :+:    :+:    #
+#    Makefile_put                                       :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: rreedy <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2019/04/08 01:45:07 by rreedy            #+#    #+#              #
-#    Updated: 2020/02/06 18:38:29 by rreedy           ###   ########.fr        #
+#    Created: 2019/04/08 01:44:48 by rreedy            #+#    #+#              #
+#    Updated: 2020/02/07 00:41:27 by rreedy           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-MOD_NAME := ft_utils
+MOD_NAME := ft_put
+MOD_SRCS := $(wildcard modules/$(MOD_NAME)/srcs/*.c)
 
-include config.mk
 include modules.mk
