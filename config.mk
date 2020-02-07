@@ -6,7 +6,7 @@
 #    By: rreedy <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/22 00:16:25 by rreedy            #+#    #+#              #
-#    Updated: 2020/02/06 18:28:26 by rreedy           ###   ########.fr        #
+#    Updated: 2020/02/06 18:42:31 by rreedy           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,6 @@ MODS += ft_str
 MODS += ft_utils
 MODS += get_next_line
 
-SRC_DIRS := $(foreach mod,$(MODS),./srcs/$(mod))
 INCLUDE_DIRS := ./includes 
 INCLUDE_DIRS += ./includes/ft_printf
 
