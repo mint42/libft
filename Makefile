@@ -6,12 +6,9 @@
 #    By: rreedy <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/04/18 14:31:20 by rreedy            #+#    #+#              #
-#    Updated: 2019/04/22 00:28:33 by rreedy           ###   ########.fr        #
+#    Updated: 2020/02/06 18:41:47 by rreedy           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
-NAME := libft.a
-TEST := main
 
 include config.mk
 
@@ -31,7 +28,7 @@ modules:
 	@ $(foreach MOD, $(MODS), $(MAKE) --no-print-directory -f ./modules/$(MOD).mk;)
 
 test: all $(TEST).o
-	$(CC) $(CFLAGS) $(TEST).o $(INCLUDES) $(LFLAGS)
+	$(CC) $(CFLAGS) $(TEST).o $(INCLUDES) $(LDFLAGS)
 
 clean:
 	@- $(RM) $(TEST).o

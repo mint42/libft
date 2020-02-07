@@ -6,33 +6,43 @@
 #    By: rreedy <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/22 00:16:25 by rreedy            #+#    #+#              #
-#    Updated: 2020/02/02 00:43:05 by rreedy           ###   ########.fr        #
+#    Updated: 2020/02/06 18:28:26 by rreedy           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+NAME := libft.a
+TEST := test
+
+MODS := ft_binarytree
+MODS += ft_conv
+MODS += ft_double_array
+MODS += ft_list
+MODS += ft_math
+MODS += ft_mem
+MODS += ft_parse
+MODS += ft_printf
+MODS += ft_put
+MODS += ft_queue
+MODS += ft_stack
+MODS += ft_str
+MODS += ft_utils
+MODS += get_next_line
+
+SRC_DIRS := $(foreach mod,$(MODS),./srcs/$(mod))
+INCLUDE_DIRS := ./includes 
+INCLUDE_DIRS += ./includes/ft_printf
+
+LIBS := ft
+LIB_DIRS := ./
+
 CC := gcc
-INCLUDES := -I./includes -I./includes/ft_printf
 CFLAGS := -g
 CFLAGS += -Wall
 CFLAGS += -Wextra
 CFLAGS += -Werror
-CFLAGS += $(INCLUDES)
-LFLAGS += -L./ -lft
-
-MODS := ft_binarytree\
-		ft_conv\
-		ft_double_array\
-		ft_list\
-		ft_math\
-		ft_mem\
-		ft_parse\
-		ft_printf\
-		ft_put\
-		ft_queue\
-		ft_stack\
-		ft_str\
-		ft_utils\
-		get_next_line
+CFLAGS += $(foreach include,$(INCLUDE_DIRS),-I$(include))
+LDFLAGS := $(foreach local_lib_dirs,$(LIB_DIRS),-L$(local_lib_dirs))
+LDFLAGS += $(foreach lib,$(LIBS),-l$(lib))
 
 NAME_COLOR := \e[1;33m
 COMPILE_COLOR := \e[1;32m

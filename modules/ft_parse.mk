@@ -6,11 +6,11 @@
 #    By: rreedy <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/27 15:47:19 by rreedy            #+#    #+#              #
-#    Updated: 2019/11/27 15:51:00 by rreedy           ###   ########.fr        #
+#    Updated: 2020/02/06 18:38:29 by rreedy           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME := ft_parse
+MOD_NAME := ft_parse
 
 include config.mk
 include modules.mk
