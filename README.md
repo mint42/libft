@@ -10,7 +10,7 @@ To set up this project, run `git clone https://github.com/mint42/libft` in the f
 
 ## MODULES
 
-This section is taken from MODS variable in [config.mk](https://github.com/mint42/libft/config.mk) Makefile, and you can remove modules from being compiled by commenting them out there)
+This section is taken from MODS variable in [config.mk](https://github.com/mint42/libft/blog/master/config.mk) Makefile, and you can remove modules from being compiled into a project by commenting them out there.
 
 MODULES | DEPENDENCIES
 --- | ---
