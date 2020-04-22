@@ -10,7 +10,7 @@ To set up this project, run `git clone https://github.com/mint42/libft` in the f
 
 ## MODULES
 
-This section is taken from `ALL_MODS` variable in [config.mk](https://github.com/mint42/libft/blob/master/config.mk) Makefile.
+This section is taken from the `ALL_MODS` variable in [config.mk](https://github.com/mint42/libft/blob/master/config.mk).
 
 MODULES | DEPENDENCIES
 --- | ---
