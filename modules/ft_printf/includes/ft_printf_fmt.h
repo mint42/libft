@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse.h                                            :+:      :+:    :+:   */
+/*   ft_printf_fmt.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/07 23:31:32 by rreedy            #+#    #+#             */
-/*   Updated: 2019/04/17 17:45:45 by rreedy           ###   ########.fr       */
+/*   Created: 2018/08/16 09:16:12 by rreedy            #+#    #+#             */
+/*   Updated: 2020/04/22 15:45:02 by mint             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PARSE_H
-# define PARSE_H
+#ifndef FT_PRINTF_FMT_H
+# define FT_PRINTF_FMT_H
 
-# include <stdarg.h>
+/*
+** flag bits:                                  ^- 0+ #
+** type bits:  lLhH jzgG eEfF cCsS dDiI bBoO uUxX pP%(
+*/
 
-char		*parse(t_sub *sub, va_list ap);
-char		*parse_bouxp(t_sub *sub, va_list ap);
-char		*parse_di(t_sub *sub, va_list ap);
-char		*parse_efg(t_sub *sub, va_list ap);
-char		*parse_unicode(t_sub *sub, va_list ap);
-char		*parse_csp(t_sub *sub, va_list ap);
+# define VALID_FMTS "gGeEfFcCsSpPdDiIbBoOuUxX%lLhHjz1234567890.+- #*()"
 
 #endif

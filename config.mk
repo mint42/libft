@@ -6,35 +6,44 @@
 #    By: rreedy <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/22 00:16:25 by rreedy            #+#    #+#              #
-#    Updated: 2020/02/07 00:36:47 by rreedy           ###   ########.fr        #
+#    Updated: 2020/04/22 15:55:23 by mint             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+-include ../libft_mods.mk
+
+ALL_MODS := ft_binarytree
+ALL_MODS += ft_conv
+ALL_MODS += ft_double_array
+ALL_MODS += ft_list
+ALL_MODS += ft_math
+ALL_MODS += ft_mem
+ALL_MODS += ft_parse
+ALL_MODS += ft_printf
+ALL_MODS += ft_put
+ALL_MODS += ft_queue
+ALL_MODS += ft_stack
+ALL_MODS += ft_str
+ALL_MODS += ft_utils
+ALL_MODS += get_next_line
+
+MOD_DEPS := $(wildcard ./modules/*/deps.mk)
+
+ifeq ($(strip $(MODS)),)
+	MODS=$(ALL_MODS)
+endif
 
 NAME := libft.a
 LIB := ft
 LIB_DIR := ./
-
-MODS := ft_binarytree
-MODS += ft_conv
-MODS += ft_double_array
-MODS += ft_list
-MODS += ft_math
-MODS += ft_mem
-MODS += ft_parse
-MODS += ft_printf
-MODS += ft_put
-MODS += ft_queue
-MODS += ft_stack
-MODS += ft_str
-MODS += ft_utils
-MODS += get_next_line
+SYM_INCLUDES_DIR := ./includes
 
 CC := gcc
 CFLAGS := -g
 CFLAGS += -Wall
 CFLAGS += -Wextra
 CFLAGS += -Werror
-CFLAGS += $(foreach mod,$(MODS),-Imodules/$(mod)/includes)
+CFLAGS += -I$(SYM_INCLUDES_DIR)
 
 NAME_COLOR := \e[1;33m
 COMPILE_COLOR := \e[1;32m

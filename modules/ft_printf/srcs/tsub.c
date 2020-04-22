@@ -1,17 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fmt.c                                              :+:      :+:    :+:   */
+/*   tsub.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/29 21:04:22 by rreedy            #+#    #+#             */
-/*   Updated: 2019/04/07 23:38:57 by rreedy           ###   ########.fr       */
+/*   Updated: 2020/04/22 15:50:55 by mint             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-#include "parse.h"
+#include "ft_printf_tsub.h"
+#include "ft_printf_parse.h"
+#include "ft_printf_fmt.h"
 #include "ft_str.h"
 #include "ft_utils.h"
 #include "ft_conv.h"

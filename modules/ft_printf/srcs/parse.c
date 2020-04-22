@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_parse.c                                         :+:      :+:    :+:   */
+/*   parse.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/12 14:27:43 by rreedy            #+#    #+#             */
-/*   Updated: 2019/04/17 17:49:26 by rreedy           ###   ########.fr       */
+/*   Updated: 2020/04/22 15:50:55 by mint             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-#include "parse.h"
-#include "crop.h"
+#include "ft_printf_tsub.h"
+#include "ft_printf_parse.h"
+#include "ft_printf_crop.h"
 #include "ft_conv.h"
 #include <stdarg.h>
 #include <stddef.h>

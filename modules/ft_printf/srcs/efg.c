@@ -6,11 +6,11 @@
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/29 02:57:08 by rreedy            #+#    #+#             */
-/*   Updated: 2019/04/07 23:26:28 by rreedy           ###   ########.fr       */
+/*   Updated: 2020/04/22 15:50:55 by mint             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ft_printf_tsub.h"
 #include "ft_str.h"
 
 static void		zeros_efg(t_sub *sub)

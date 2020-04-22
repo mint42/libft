@@ -6,11 +6,11 @@
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/14 21:30:33 by rreedy            #+#    #+#             */
-/*   Updated: 2019/04/07 23:24:52 by rreedy           ###   ########.fr       */
+/*   Updated: 2020/04/22 15:50:55 by mint             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ft_printf_tsub.h"
 #include "ft_str.h"
 
 char	*crop_csp(t_sub *sub)

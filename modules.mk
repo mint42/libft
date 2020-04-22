@@ -6,25 +6,26 @@
 #    By: rreedy <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/22 00:24:06 by rreedy            #+#    #+#              #
-#    Updated: 2020/02/07 00:37:11 by rreedy           ###   ########.fr        #
+#    Updated: 2020/04/22 15:54:01 by mint             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 include config.mk
 
+MOD_PATH := ./modules/$(MOD_NAME)
+MOD_SRCS := $(wildcard $(MOD_PATH)/srcs/*.c)
 MOD_OBJS := $(patsubst %.c,%.o,$(MOD_SRCS))
 
-.PHONY: $(MOD_NAME) all start stop clean
-
-all: $(MOD_NAME)
+.PHONY: all start stop clean
 
 $(MOD_NAME): start $(MOD_OBJS) stop
+	@- ln -s .$(MOD_PATH)/includes/$(MOD_NAME).h $(SYM_INCLUDES_DIR)
 
 start:
 	@ printf "$(COMPILE_COLOR)Compiling $(NAME_COLOR)$(MOD_NAME) $(DOTS_COLOR)"
 
 %.o: %.c
-	@ $(CC) $(CFLAGS) -c $< -o $@
+	@ $(CC) $(CFLAGS) -I$(MOD_PATH)/includes -c $< -o $@
 	@ printf "."
 
 stop:
@@ -34,4 +35,5 @@ clean:
 	@ if $(foreach obj, $(MOD_OBJS),[ -f $(obj) ] ||) false; then \
 		printf "$(DELETE_COLOR)Cleaning $(NAME_COLOR)$(MOD_NAME)$(CLEAR_COLOR)\n"; \
 	  fi; 
+	@- $(RM) $(SYM_INCLUDES_DIR)/$(MOD_NAME).h
 	@- $(RM) $(MOD_OBJS)

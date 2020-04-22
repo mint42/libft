@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   get_next_line_struct_file.h                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/16 09:16:12 by rreedy            #+#    #+#             */
-/*   Updated: 2020/04/22 15:46:07 by mint             ###   ########.fr       */
+/*   Created: 2018/06/26 12:22:23 by rreedy            #+#    #+#             */
+/*   Updated: 2020/04/22 15:41:27 by mint             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#ifndef GET_NEXT_LINE_STRUCT_FILE_H
+# define GET_NEXT_LINE_STRUCT_FILE_H
 
-# include <stddef.h>
-# include <stdarg.h>
+# define BUF(lst) (((struct s_file *)((lst)->content))->buf)
+# define FD(lst) (((struct s_file *)((lst)->content))->fd)
 
-int					ft_printf(const char *fmt, ...);
-int					ft_sprintf(char **s, const char *fmt, ...);
-int					ft_printfd(int fd, const char *fmt, ...);
+struct		s_file
+{
+	char	*buf;
+	int		fd;
+};
 
 #endif

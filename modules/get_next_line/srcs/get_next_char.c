@@ -6,11 +6,12 @@
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/08 17:43:55 by rreedy            #+#    #+#             */
-/*   Updated: 2019/10/03 23:43:35 by rreedy           ###   ########.fr       */
+/*   Updated: 2020/04/22 15:42:12 by mint             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+#include "get_next_line_struct_file.h"
 #include "ft_mem.h"
 #include "ft_str.h"
 #include "ft_list.h"

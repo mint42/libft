@@ -1,16 +1,13 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    ft_parse.mk                                        :+:      :+:    :+:    #
+#    deps.mk                                            :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: rreedy <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2019/11/27 15:47:19 by rreedy            #+#    #+#              #
-#    Updated: 2020/02/07 00:41:27 by rreedy           ###   ########.fr        #
+#    Created: 2019/04/08 01:41:15 by rreedy            #+#    #+#              #
+#    Updated: 2020/04/22 12:08:13 by mint             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-MOD_NAME := ft_parse
-MOD_SRCS := $(wildcard modules/$(MOD_NAME)/srcs/*.c)
-
-include modules.mk
+ft_conv: ft_math ft_str ft_utils

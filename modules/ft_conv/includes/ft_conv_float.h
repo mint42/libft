@@ -1,23 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_conv_float.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/16 09:16:12 by rreedy            #+#    #+#             */
-/*   Updated: 2020/04/22 15:46:07 by mint             ###   ########.fr       */
+/*   Created: 2019/04/07 23:06:15 by rreedy            #+#    #+#             */
+/*   Updated: 2020/04/22 15:35:50 by mint             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#ifndef FT_CONV_FLOAT_H
+# define FT_CONV_FLOAT_H
 
-# include <stddef.h>
-# include <stdarg.h>
+# define SIGFIGS_I (f.len_i + f.trail_zeros)
+# define SIGFIGS_F (f.len_f + f.lead_zeros)
 
-int					ft_printf(const char *fmt, ...);
-int					ft_sprintf(char **s, const char *fmt, ...);
-int					ft_printfd(int fd, const char *fmt, ...);
+typedef	union		u_double
+{
+	double			d;
+	long int		l;
+}					t_double;
+
+typedef	struct		s_fp
+{
+	long			integer;
+	long			fraction;
+	int				len_i;
+	int				len_f;
+	int				lead_zeros;
+	int				trail_zeros;
+}					t_fp;
 
 #endif

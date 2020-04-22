@@ -16,7 +16,7 @@ MODULES | DEPENDENCIES
 --- | ---
 ft_binarytree | ft_mem
 ft_conv | ft_math, ft_str, ft_utils
-ft_double_array | ft_mem, ft_str
+ft_double_array | ft_mem, ft_printf, ft_str
 ft_list | ft_mem
 ft_math
 ft_mem

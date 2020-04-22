@@ -6,12 +6,12 @@
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/05 20:44:19 by rreedy            #+#    #+#             */
-/*   Updated: 2019/04/17 17:49:37 by rreedy           ###   ########.fr       */
+/*   Updated: 2020/04/22 15:52:21 by mint             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-#include "crop.h"
+#include "ft_printf_tsub.h"
+#include "ft_printf_crop.h"
 #include "ft_str.h"
 #include "ft_conv.h"
 #include <stdarg.h>
