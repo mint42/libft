@@ -10,7 +10,7 @@ To set up this project, run `git clone https://github.com/mint42/libft` in the f
 
 ## MODULES
 
-This section is taken from `ALL_MODS` variable in [config.mk](https://github.com/mint42/libft/blob/master/config.mk) Makefile, and you can remove modules from being compiled into a project by commenting them out there.
+This section is taken from `ALL_MODS` variable in [config.mk](https://github.com/mint42/libft/blob/master/config.mk) Makefile.
 
 MODULES | DEPENDENCIES
 --- | ---
@@ -31,7 +31,7 @@ get_next_line | ft_list, ft_mem, ft_str
 
 ## MODULAR COMPILATION
 
-By default, libft will compile all modules into a single `.a` file. To request that only certain modules be compiled, set up a file named `libft_mods.mk` in this repository's parent directory. This file should contain one variable named `MODS` which is a list of the requested modules. The libft's Makefile will handle it's own dependencies, so no need to include anything in this file that a project does not explicitly need. If you're unfamiliar with makefile format, feel free to use this template and comment out what you don't need:
+By default, libft will compile all modules into a single `.a` file. To request that only certain modules be compiled, set up a file named `libft_mods.mk` in this repository's parent directory. This file should contain one variable named `MODS` which is a list of the requested modules. The libft's Makefile will handle its own dependencies, so no need to include anything in this file that a project does not explicitly need. If you're unfamiliar with makefile format, feel free to use this template and comment out what you don't need:
 
 ```
 # Makefile comment
