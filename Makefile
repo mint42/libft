@@ -6,23 +6,26 @@
 #    By: rreedy <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/04/18 14:31:20 by rreedy            #+#    #+#              #
-#    Updated: 2020/04/22 15:59:10 by mint             ###   ########.fr        #
+#    Updated: 2020/04/22 20:36:08 by mint             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 include config.mk
 
-.PHONY: $(MODS) all clean fclean re
+.PHONY: $(MODS) create_syms_dir all clean fclean re
 
 all: $(NAME)
 
-$(NAME): $(MODS)
+$(NAME): create_syms_dir $(MODS)
 	@ printf "$(COMPILE_COLOR)Creating  $(NAME_COLOR)$(NAME) "
 	@ ar rc $(NAME) $(shell find modules -name "*.o")
 	@ printf "$(DOTS_COLOR)."
 	@ ranlib $(NAME)
 	@ printf "."
 	@ printf " $(FINISH_COLOR) done$(CLEAR_COLOR)\n"
+
+create_syms_dir:
+	@- mkdir $(SYM_INCLUDES_DIR)
 
 -include $(MOD_DEPS)
 
@@ -37,6 +40,7 @@ fclean: clean
 			$(RM) $(NAME); \
 			printf "$(DELETE_COLOR)Removing $(NAME_COLOR)$(NAME)\n"; \
 	   fi;
+	@- rm -rf $(SYM_INCLUDES_DIR)
 
 re: fclean all
 

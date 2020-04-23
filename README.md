@@ -6,7 +6,7 @@ According to the rules of the libft project, the only allowed functions for crea
 
 ## GETTING STARTED
 
-To set up this project, run `git clone https://github.com/mint42/libft` in the folder of your choosing. Then run the `make` command in the root of the repository. The Makefile will build the libft.a file which can be linked to a test main or project. All of the necessary public include files are symlinked at compile time to the `includes` folder at the root of the repository for ease of linking.
+To set up this project, run `git clone https://github.com/mint42/libft` in the folder of your choosing. Then run the `make` command in the root of the repository. The Makefile will build the libft.a file which can be linked to a test main or project. All of the necessary public include files are symlinked at compile time to the `includes` folder (or whatever folder is defined by `SYM_INCLUDES_DIR` in [config.mk](https://github.com/mint42/libft/blob/master/config.mk)) at the root of the repository for ease of linking.
 
 ### MODULAR COMPILATION
 
