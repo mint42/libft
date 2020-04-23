@@ -34,14 +34,14 @@ MODS += ft_utils
 MODS += get_next_line
 ```
 
-#### MODULES
+## MODULES
 
 MODULE | DESCRIPTION | DEPENDENCIES
---- | ---
+--- | --- | ---
 ft_binarytree | _void *_ binary tree implementation | ft_mem
 ft_conv | Data type conversions | ft_math, ft_str, ft_utils
 ft_double_array | _void *_ Double array implementation | ft_mem, ft_printf, ft_str
-ft_list | _void *_ linked-list implemenation | ft_mem
+ft_list | _void *_ linked list implemenation | ft_mem
 ft_math | Math operations
 ft_mem | _void *_ memory manipulation
 ft_parse | _char *_ word and whitespace parsing | ft_utils
