@@ -6,14 +6,11 @@ According to the rules of the libft project, the only allowed functions for crea
 
 ## GETTING STARTED
 
-To set up this project, run `git clone https://github.com/mint42/libft` in the folder of your choosing.
-
-### BASIC COMPILATION
-Then run the `make` command in the root of the repository. The Makefile will build the libft.a file which can be linked to a test main or project. All of the necessary public include files are symlinked at compile time to the `includes` folder at the root of the repository for ease of linking.
+To set up this project, run `git clone https://github.com/mint42/libft` in the folder of your choosing. Then run the `make` command in the root of the repository. The Makefile will build the libft.a file which can be linked to a test main or project. All of the necessary public include files are symlinked at compile time to the `includes` folder at the root of the repository for ease of linking.
 
 ### MODULAR COMPILATION
 
-By default, libft will compile all modules into a single `.a` file. To request that only certain modules be compiled, set up a file named `libft_mods.mk` in your repository's parent directory. This file should contain one variable named `MODS` which is a list of the requested modules. The libft's Makefile will handle its own dependencies, so no need to include anything in this file that a project does not explicitly need. If you're unfamiliar with makefile format, feel free to use this template and comment out what you don't need:
+By default, libft will compile all modules into a single `.a` file. To request that only certain modules be compiled, before running the `make` command, set up a file named `libft_mods.mk` in your repository's parent directory. This file should contain one variable named `MODS` which is a list of the requested modules. The libft's Makefile will handle its own dependencies, so no need to include any module that a project does not explicitly need. If you're unfamiliar with Makefile format, feel free to use this template and comment out what you don't need:
 
 ```
 # Makefile comment
