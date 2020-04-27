@@ -6,7 +6,7 @@
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/29 02:57:08 by rreedy            #+#    #+#             */
-/*   Updated: 2020/04/22 15:50:55 by mint             ###   ########.fr       */
+/*   Updated: 2020/04/27 09:28:11 by mint             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,41 +18,41 @@ static void		zeros_efg(t_sub *sub)
 	int		i;
 
 	i = 0;
-	while (S && S[i] == ' ')
-		S[i++] = '0';
+	while (sub->s && (sub->s)[i] == ' ')
+		(sub->s)[i++] = '0';
 }
 
 static void		flags_efg(t_sub *sub)
 {
-	S = ft_strpad(&S, 1, ft_strlen(S) + 1, ' ');
-	if (FLAGS & 0x4)
-		S[0] = '+';
+	sub->s = ft_strpad(&(sub->s), 1, ft_strlen(sub->s) + 1, ' ');
+	if (sub->flags & 0x4)
+		(sub->s)[0] = '+';
 }
 
 static void		width_efg(t_sub *sub)
 {
-	if ((size_t)JUST > (size_t)WIDTH - LEN)
-		JUST = WIDTH - LEN;
-	if (!(FLAGS & 0x30))
-		JUST = WIDTH - JUST - LEN;
-	else if ((FLAGS & 0x30) == 0x30)
-		JUST = (WIDTH - LEN) / 2;
-	else if (FLAGS & 0x20)
-		JUST = ((WIDTH - LEN) / 2) + (((WIDTH - LEN) % 2) ? 1 : 0);
-	S = ft_strpad(&S, JUST, WIDTH, ' ');
-	LEN = ft_strlen(S);
+	if ((size_t)(sub->j) > (size_t)(sub->w) - sub->len)
+		sub->j = sub->w - sub->len;
+	if (!((sub->flags) & 0x30))
+		sub->j = sub->w - sub->j - sub->len;
+	else if (((sub->flags) & 0x30) == 0x30)
+		sub->j = (sub->w - sub->len) / 2;
+	else if ((sub->flags) & 0x20)
+		sub->j = ((sub->w - sub->len) / 2) + (((sub->w - sub->len) % 2) ? 1 : 0);
+	sub->s = ft_strpad(&(sub->s), sub->j, sub->w, ' ');
+	sub->len = ft_strlen(sub->s);
 }
 
 char			*crop_efg(t_sub *sub)
 {
-	if (FLAGS & 0x6 && S[0] != '-')
+	if (sub->flags & 0x6 && (sub->s)[0] != '-')
 		flags_efg(sub);
-	LEN = ft_strlen(S);
-	if ((size_t)WIDTH > LEN)
+	sub->len = ft_strlen(sub->s);
+	if ((size_t)(sub->w) > sub->len)
 		width_efg(sub);
-	if (FLAGS & 0x8 && !(FLAGS & 0x10))
+	if (sub->flags & 0x8 && !(sub->flags & 0x10))
 		zeros_efg(sub);
-	if (TYPE & 0x1500000)
-		S = ft_strupper(S);
-	return (S);
+	if (sub->type & 0x1500000)
+		(sub->s) = ft_strupper(sub->s);
+	return (sub->s);
 }

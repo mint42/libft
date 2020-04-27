@@ -6,7 +6,7 @@
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/05 20:44:19 by rreedy            #+#    #+#             */
-/*   Updated: 2020/04/22 15:52:21 by mint             ###   ########.fr       */
+/*   Updated: 2020/04/27 09:56:38 by mint             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,44 +19,44 @@
 
 char	*parse_unicode(t_sub *sub, va_list ap)
 {
-	if (TYPE == 0x40000 || TYPE == 0x80080000)
+	if (sub->type == 0x40000 || sub->type == 0x80080000)
 	{
-		S = conv_utf8_char(va_arg(ap, wchar_t), S);
-		if (*S == '\0')
-			FLAGS = FLAGS | 0x40;
+		sub->s = conv_utf8_char(va_arg(ap, wchar_t), sub->s);
+		if (*(sub->s) == '\0')
+			sub->flags = sub->flags | 0x40;
 	}
-	else if (TYPE == 0x10000 || TYPE == 0x80020000)
+	else if (sub->type == 0x10000 || sub->type == 0x80020000)
 	{
-		S = conv_utf8_str(va_arg(ap, wchar_t *), S);
-		if (!S)
+		sub->s = conv_utf8_str(va_arg(ap, wchar_t *), sub->s);
+		if (!sub->s)
 		{
-			S = ft_strdup("(null)");
-			FLAGS = FLAGS | 0x40;
+			sub->s = ft_strdup("(null)");
+			sub->flags = sub->flags | 0x40;
 		}
 	}
-	return ((S) ? crop_unicode(sub) : S);
+	return ((sub->s) ? crop_unicode(sub) : sub->s);
 }
 
 char	*parse_csp(t_sub *sub, va_list ap)
 {
-	if (TYPE == 0x2)
-		S = ft_strdup("%");
-	else if (TYPE == 0x80000)
+	if (sub->type == 0x2)
+		sub->s = ft_strdup("%");
+	else if (sub->type == 0x80000)
 	{
-		S = ft_ctoa(va_arg(ap, int));
-		if (*S == '\0')
-			FLAGS = FLAGS | 0x40;
+		sub->s = ft_ctoa(va_arg(ap, int));
+		if (*(sub->s) == '\0')
+			sub->flags = sub->flags | 0x40;
 	}
-	else if (TYPE == 0x20000)
+	else if (sub->type == 0x20000)
 	{
-		S = va_arg(ap, char *);
-		if (S)
-			S = ft_strdup(S);
+		sub->s = va_arg(ap, char *);
+		if (sub->s)
+			sub->s = ft_strdup(sub->s);
 		else
 		{
-			S = ft_strdup("(null)");
-			FLAGS = FLAGS | 0x40;
+			sub->s = ft_strdup("(null)");
+			sub->flags = sub->flags | 0x40;
 		}
 	}
-	return ((S) ? crop_csp(sub) : S);
+	return ((sub->s) ? crop_csp(sub) : sub->s);
 }

@@ -6,7 +6,7 @@
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/29 21:04:22 by rreedy            #+#    #+#             */
-/*   Updated: 2020/04/22 15:50:55 by mint             ###   ########.fr       */
+/*   Updated: 2020/04/27 09:56:38 by mint             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,26 +18,22 @@
 #include "ft_conv.h"
 #include <stddef.h>
 
-static char	*get_flags(char *fmt, t_sub *sub)
+static char	*get_flags(char *fmt, t_sub *s)
 {
 	char	*spec;
 	char	*cur;
 
-	FLAGS = 0;
 	spec = "^-0+ #";
 	while (*fmt && (cur = ft_strchr(spec, *fmt)) && ++fmt)
-		FLAGS = FLAGS | (1 << (5 - (cur - spec)));
+		s->flags = s->flags | (1 << (5 - (cur - spec)));
 	return (fmt);
 }
 
-static char	*get_wjp(char *fmt, t_sub *sub, va_list ap)
+static char	*get_wjp(char *fmt, t_sub *s, va_list ap)
 {
 	int		*num;
 
-	PREC = -1;
-	WIDTH = 0;
-	JUST = 0;
-	num = (*fmt == '.' && ++fmt) ? &PREC : &WIDTH;
+	num = (*fmt == '.' && ++fmt) ? &(s->p) : &(s->w);
 	if (!ft_isdigit(*fmt) && *fmt != '.' && *fmt != '*')
 		return (fmt);
 	while (num)
@@ -50,63 +46,66 @@ static char	*get_wjp(char *fmt, t_sub *sub, va_list ap)
 			while (fmt && ft_isdigit(*fmt))
 				++fmt;
 		}
-		if (num == &WIDTH && *fmt == ':' && ++fmt)
-			num = &JUST;
+		if (num == &(s->w) && *fmt == ':' && ++fmt)
+			num = &(s->j);
 		else
-			num = (*fmt == '.' && num != &PREC && ++fmt) ? &PREC : 0;
+			num = (*fmt == '.' && num != &(s->p) && ++fmt) ? &(s->p) : 0;
 	}
 	return (fmt);
 }
 
-static char	*get_type(char *fmt, t_sub *sub)
+static char	*get_type(char *fmt, t_sub *s)
 {
 	char	*spec;
 	char	*cur;
 
-	TYPE = 0;
-	BASE = 0;
 	spec = "lLhHjzgGeEfFcCsSdDiIbBoOuUxXpP%(";
 	if (*fmt && (cur = ft_strchr(spec, *fmt)) && (cur - spec) < 6 && ++fmt)
-		TYPE = TYPE | (1 << (31 - (cur - spec)));
-	if (TYPE & 0xA0000000 && (*fmt == 'l' || *fmt == 'h'))
-		TYPE = (*fmt++ == 'l') ? TYPE ^ 0xC0000000 : TYPE ^ 0x30000000;
+		s->type = (s->type) | (1 << (31 - (cur - spec)));
+	if (s->type & 0xA0000000 && (*fmt == 'l' || *fmt == 'h'))
+		s->type = (*fmt++ == 'l') ? s->type ^ 0xC0000000 : s->type ^ 0x30000000;
 	if (*fmt && (cur = ft_strchr(spec, *fmt)) && (cur - spec) >= 6 && ++fmt)
-		TYPE = TYPE | (1 << (31 - (cur - spec)));
-	if (TYPE & 0x3F0FCC0)
-		BASE = (TYPE & 0xC00) ? 2 : 10;
-	else if (TYPE & 0x33C)
-		BASE = (TYPE & 0x300) ? 8 : 16;
-	else if (TYPE & 0x1 && (BASE = ft_atoi(fmt)) && BASE > 1 && BASE <= 36)
+		s->type = s->type | (1 << (31 - (cur - spec)));
+	if (s->type & 0x3F0FCC0)
+		s->base = ((s->type) & 0xC00) ? 2 : 10;
+	else if (s->type & 0x33C)
+		s->base = (s->type & 0x300) ? 8 : 16;
+	else if (s->type & 0x1 && (s->base = ft_atoi(fmt)) && s->base > 1
+			&& s->base <= 36)
+	{
 		while (ft_isdigit(*fmt))
 			++fmt;
-	if (TYPE & 0x1 && *fmt == ')' && ++fmt && (*fmt == 'b' || *fmt == 'B'))
-		TYPE = (*fmt++ == 'b') ? TYPE ^ 0x801 : TYPE ^ 0x401;
-	if (!(TYPE & 0x3FFFFFE))
-		TYPE = 0;
+	}
+	if (s->type & 0x1 && *fmt == ')' && ++fmt && (*fmt == 'b' || *fmt == 'B'))
+		s->type = (*fmt++ == 'b') ? s->type ^ 0x801 : s->type ^ 0x401;
+	if (!(s->type & 0x3FFFFFE))
+		s->type = 0;
 	return (fmt);
 }
 
-static char	*get_sub(char *fmt, t_sub *sub, va_list ap)
+static char	*get_sub(char *fmt, t_sub *s, va_list ap)
 {
-	if ((FLAGS & 0x6 && (BASE != 10 || TYPE & 0xC0 || FLAGS == 0x6)) ||
-		(FLAGS & 0x1 && (BASE != 8 && BASE != 16 && BASE != 2)) ||
-		(FLAGS & 0x8 && TYPE & 0xF000E) ||
-		(TYPE & 0xFC000000 && TYPE & 0x5514E))
-		TYPE = 0;
-	if (!TYPE)
+	if ((s->flags & 0x6 && (s->base != 10 || s->type & 0xC0 ||
+				s->flags == 0x6)) ||
+		(s->flags & 0x1 && (s->base != 8 && s->base != 16 &&
+				s->base != 2)) ||
+		(s->flags & 0x8 && s->type & 0xF000E) ||
+		(s->type & 0xFC000000 && s->type & 0x5514E))
+		s->type = 0;
+	if (!(s->type))
 		while (fmt && *fmt && ft_strchr(VALID_FMTS, *fmt))
 			++fmt;
-	if (WIDTH < 0)
+	if (s->w < 0)
 	{
-		FLAGS = FLAGS | 0x10;
-		WIDTH = WIDTH * -1;
+		s->flags = s->flags | 0x10;
+		s->w = s->w * -1;
 	}
-	if (TYPE)
-		S = parse(sub, ap);
-	if (!TYPE || !S)
+	if (s->type)
+		s->s = parse(s, ap);
+	if (!(s->type) || !(s->s))
 	{
-		S = conv_utf8_str(L"¯\\_(ツ)_/¯", S);
-		LEN = 13;
+		s->s = conv_utf8_str(L"¯\\_(ツ)_/¯", (s->s));
+		s->len = 13;
 	}
 	return (fmt);
 }
@@ -117,6 +116,12 @@ t_sub		make_tsub(char **fmt, va_list ap, int init)
 
 	sub.s = 0;
 	sub.len = 0;
+	sub.type = 0;
+	sub.base = 0;
+	sub.p = -1;
+	sub.w = 0;
+	sub.j = 0;
+	sub.flags = 0;
 	if (init)
 		return (sub);
 	++(*fmt);

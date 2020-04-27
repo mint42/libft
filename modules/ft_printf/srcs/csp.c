@@ -6,7 +6,7 @@
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/14 21:30:33 by rreedy            #+#    #+#             */
-/*   Updated: 2020/04/22 15:50:55 by mint             ###   ########.fr       */
+/*   Updated: 2020/04/27 09:56:38 by mint             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,27 +15,27 @@
 
 char	*crop_csp(t_sub *sub)
 {
-	if (((size_t)PREC < ft_strlen(S)) && !(TYPE & 0x40002))
-		S[((FLAGS & 0x40) ? 0 : PREC)] = '\0';
-	LEN = (TYPE & 0x80000 && FLAGS & 0x40) ? 1 : ft_strlen(S);
-	if ((size_t)WIDTH > LEN)
+	if (((size_t)(sub->p) < ft_strlen(sub->s)) && !(sub->type & 0x40002))
+		(sub->s)[((sub->flags & 0x40) ? 0 : sub->p)] = '\0';
+	sub->len = (sub->type & 0x80000 && sub->flags & 0x40) ? 1 : ft_strlen(sub->s);
+	if ((size_t)(sub->w) > sub->len)
 	{
-		if ((size_t)JUST > (size_t)WIDTH - LEN)
-			JUST = WIDTH - LEN;
-		if (!(FLAGS & 0x30))
-			JUST = WIDTH - JUST - LEN;
-		else if ((FLAGS & 0x30) == 0x30)
-			JUST = (WIDTH - LEN) / 2;
-		else if (FLAGS & 0x20)
-			JUST = ((WIDTH - LEN) / 2) + (((WIDTH - LEN) % 2) ? 1 : 0);
-		if (TYPE & 0xC0000 && FLAGS & 0x40)
+		if ((size_t)(sub->j) > (size_t)(sub->w) - sub->len)
+			sub->j = sub->w - sub->len;
+		if (!(sub->flags & 0x30))
+			sub->j = sub->w - sub->j - sub->len;
+		else if ((sub->flags & 0x30) == 0x30)
+			sub->j = (sub->w - sub->len) / 2;
+		else if (sub->flags & 0x20)
+			sub->j = ((sub->w - sub->len) / 2) + (((sub->w - sub->len) % 2) ? 1 : 0);
+		if (sub->type & 0xC0000 && sub->flags & 0x40)
 		{
-			S = ft_strpad(&S, JUST, WIDTH, ' ');
-			S[JUST] = '\0';
+			sub->s = ft_strpad(&(sub->s), sub->j, sub->w, ' ');
+			(sub->s)[sub->j] = '\0';
 		}
 		else
-			S = ft_strpad(&S, JUST, WIDTH, ' ');
-		LEN = WIDTH;
+			sub->s = ft_strpad(&(sub->s), sub->j, sub->w, ' ');
+		sub->len = sub->w;
 	}
-	return (S);
+	return (sub->s);
 }
