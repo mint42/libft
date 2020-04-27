@@ -6,7 +6,7 @@
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/07 23:32:33 by rreedy            #+#    #+#             */
-/*   Updated: 2020/04/22 15:45:24 by mint             ###   ########.fr       */
+/*   Updated: 2020/04/27 09:58:42 by mint             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,6 @@
 
 # include <stddef.h>
 # include <stdarg.h>
-
-# define S sub->s
-# define FLAGS sub->flags
-# define TYPE sub->type
-# define BASE sub->base
-# define PREC sub->p
-# define WIDTH sub->w
-# define JUST sub->j
-# define LEN sub->len
 
 typedef struct		s_sub
 {
