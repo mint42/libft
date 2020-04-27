@@ -6,7 +6,7 @@
 /*   By: rreedy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/07 23:33:49 by rreedy            #+#    #+#             */
-/*   Updated: 2020/04/22 15:53:37 by mint             ###   ########.fr       */
+/*   Updated: 2020/04/27 10:00:56 by rreedy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <stddef.h>
 
-typedef struct s_sub t_sub;
+typedef struct s_sub	t_sub;
 
 char				*crop_di(t_sub *sub);
 char				*crop_bouxp(t_sub *sub);
