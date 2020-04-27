@@ -6,7 +6,7 @@
 #    By: rreedy <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/22 00:16:25 by rreedy            #+#    #+#              #
-#    Updated: 2020/04/22 15:55:23 by mint             ###   ########.fr        #
+#    Updated: 2020/04/26 23:05:14 by mint             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,5 +60,5 @@ DELETE_COLOR := \e[0;31m
 #	INCLUDE_DIRS := ./test/includes
 #	CFLAGS += $(foreach include,$(INCLUDE_DIRS),-I$(include))
 #	LDFLAGS := -L$(LIB_DIR)
-#	LDFLAGS := -l$(LIB)
+#	LDFLAGS += -l$(LIB)
 #
