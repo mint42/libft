@@ -6,7 +6,7 @@
 #    By: rreedy <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/22 00:24:06 by rreedy            #+#    #+#              #
-#    Updated: 2020/04/22 15:54:01 by mint             ###   ########.fr        #
+#    Updated: 2020/04/29 08:39:31 by mint             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,5 +35,4 @@ clean:
 	@ if $(foreach obj, $(MOD_OBJS),[ -f $(obj) ] ||) false; then \
 		printf "$(DELETE_COLOR)Cleaning $(NAME_COLOR)$(MOD_NAME)$(CLEAR_COLOR)\n"; \
 	  fi; 
-	@- $(RM) $(SYM_INCLUDES_DIR)/$(MOD_NAME).h
 	@- $(RM) $(MOD_OBJS)
