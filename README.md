@@ -1,8 +1,8 @@
 # LIBFT
 
-Libft is the foundation for all beginner projects in the 42 curriculum. FT stands for the Forty-Two library. This is a recreation of all of the most fundamental functions from C's standard libraries. This implementation of libft can be [compiled modularly](#MODULAR-COMPILATION).
+Libft is the foundation for all projects in the 42 curriculum. FT stands for the Forty-Two library. This is a recreation of all of the most fundamental functions from C's standard libraries. It also includes multiple data structure implementations. This library can be [compiled modularly](#MODULAR-COMPILATION)!
 
-According to the rules of the libft project, the only allowed functions for creating this library are malloc(), free(), and write(). Any other functions you might want to use must be recreated yourself.
+According to the rules of the libft project, the only allowed functions are malloc(), free(), and write(). Any other functions you might want to use must be recreated yourself.
 
 ## GETTING STARTED
 
@@ -10,7 +10,7 @@ To set up this project, run `git clone https://github.com/mint42/libft` in the f
 
 ### MODULAR COMPILATION
 
-By default, libft will compile all modules into a single `.a` file. To request that only certain modules be compiled, before running the `make` command, set up a file named `libft_mods.mk` in your repository's parent directory. This file should contain one variable named `MODS` which is a list of the requested modules. The libft's Makefile will handle its own dependencies, so no need to include any module that a project does not explicitly need. If you're unfamiliar with Makefile format, feel free to use this template and comment out what you don't need:
+By default, libft will compile all modules into a single `.a` file. To request that only certain modules be compiled, before running the `make` command, set up a file named `libft_mods.mk` in your repository's parent directory. This file should contain a variable named `MODS` which is a list of the requested modules. The libft's Makefile will handle its own dependencies, so no need to include any module that a project does not explicitly need. If you're unfamiliar with Makefile format, feel free to use this template and comment out what you don't need:
 
 ```
 # Makefile comment
